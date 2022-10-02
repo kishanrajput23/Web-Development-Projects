@@ -1,0 +1,132 @@
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <title>Student Survey</title>    
+    <style type="text/css">    
+        body{    
+            font-family: Calibri;    
+        }    
+        input[type="text"] {    
+            width: 250px;    
+        }    
+        input[type="submit"], input[type="reset"] {    
+            width: 77px;    
+            height: 27px;    
+            position: relative;left: 180px;    
+        }    
+        form{    
+            text-align: center;    
+            font-family: Calibri;    
+            font-size: 20px;    
+            border: 3px solid black;    
+            width: 600px;    
+            margin: 20px auto;    
+        }    
+        td {    
+            padding: 10px;    
+        }    
+        td:first-child {    
+            text-align: right;    
+            font-weight: bold;    
+        }    
+        td:last-child {    
+            text-align: left;    
+    
+    </style>    
+    <script>    
+        function validate() {    
+            var fname = document.reg_form.fname;    
+            var lname = document.reg_form.lname;    
+            var address = document.reg_form.address;    
+            var mode = document.reg_form.mode;    
+            var email = document.reg_form.email;    
+            var mobile = document.reg_form.mobile;    
+            var course = document.reg_form.course;    
+    
+            if (fname.value.length <= 0) {    
+                alert("Name is required");    
+                fname.focus();    
+                return false;    
+            }    
+            var matches = fname.value.match(/\d+/g);
+            if (matches != null) {
+                    alert('Name cannot contain a number');
+            }
+            if (lname.value.length <= 0) {    
+                alert("Name is required");    
+                lname.focus();    
+                return false;    
+            }    
+            if (address.value.length <= 0) {    
+                alert("Description is required");    
+                address.focus();    
+                return false;    
+            }    
+            if (mode.value.length <= 0) {    
+                alert("Mode of Study is required");    
+                mode.focus();    
+                return false;    
+            }    
+            
+            if (course.value == "select course") {    
+                alert("Hobby is required");    
+                course.focus();    
+                return false;    
+            }    
+
+            alert("Hey "+fname.value + " Reg No: "+lname.value + ". Good to know you enjoy " +course.value);   
+        }    
+    </script>    
+</head>    
+<body>    
+    <center><h1>Student Survey</h1></center>    
+    <hr>    
+    <form method="" action="" name="reg_form" onsubmit="return validate()">    
+        <h2>Registration Form</h2>    
+        <table>    
+            <tr>    
+                <td><label>Name: </label></td>    
+                <td>    
+                    <input type="text" name="fname" placeholder="Name">    
+                </td>    
+            </tr>    
+            <tr>    
+                <td><label>Registration No: </label></td>    
+                <td>    
+                    <input type="text" name="lname" placeholder="Registration">    
+                </td>    
+            </tr>    
+            <tr>    
+                <td><label>Description: </label></td>    
+                <td>    
+                    <input type="textarea" size="50" name="address" placeholder="About Yourself">    
+                </td>    
+            </tr>    
+            <tr>    
+                <td><label>Mode Of Study: </label></td>    
+                <td>    
+                    <input type="radio" name="mode" value="online">Online 
+                    <input type="radio" name="mode" value="offline">Offline   
+                </td>    
+            </tr>    
+            
+            <td><label>Hobby: </label></td>    
+                <td>    
+                    <select name="course">    
+                        <option value="select course">Select Hobby</option>    
+                        <option value="Reading">Reading</option>    
+                        <option value="Sports">Sports</option>    
+                        <option value="Coding">Coding</option>    
+                        <option value="Knitting">Knitting</option>    
+                    </select>    
+                </td>    
+            </tr>    
+            <tr>    
+                <td>    
+                    <input type="submit" name="submit" value="Submit">    
+                    <input type="reset" name="reset" value="Reset">    
+                </td>    
+            </tr>             
+        </table>    
+    </form>    
+</body>   

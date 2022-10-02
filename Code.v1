@@ -1,0 +1,170 @@
+#include <SPI.h>
+#include <Ethernet.h>
+#include <Thermistor.h>
+#define lumin A1
+String readString;
+int led = A0;
+Thermistor temp(A5);
+int lumi;
+int vermelho = A2;//2
+int azul = A3;//3
+int verde = A4;//4
+int vm = 0;
+int vd = 0;
+int az = 0;
+byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };//Deixa esse
+byte ip[] = { 192, 168, 0, 32 };//10.197.10.43  10.197.11.110
+byte gateway[] = {192, 168, 0, 1 };//10.197.8.1
+byte subnet[] = { 255, 255, 255, 0 };//255.255.248.0
+EthernetServer server(80);
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(led, OUTPUT);
+  pinMode(azul, OUTPUT);
+  pinMode(verde, OUTPUT);
+  pinMode(vermelho, OUTPUT);
+  Ethernet.begin(mac, ip, gateway, subnet);
+  server.begin();
+}
+
+           
+
+void loop()
+{
+  EthernetClient client = server.available();
+  if (client) {
+    while (client.connected())
+    {
+      if (client.available())
+      {
+        char c = client.read();
+          readString += c;
+
+        if (c == 'n')
+        {
+              digitalWrite(azul, az);
+              digitalWrite(verde, vd);
+              digitalWrite(vermelho, vm);
+         
+          int temperature = temp.getTemp();
+          if (readString.indexOf("?ledon") > 0) {
+           digitalWrite(led, HIGH);
+          } else {
+            if (readString.indexOf("?ledoff") > 0) {
+              digitalWrite(led, LOW);            }
+         
+          }
+//          int vm = 0;
+//          int vd = 0;
+//          int az = 0;
+         
+          if (readString.indexOf("?cor1") > 0) {
+              digitalWrite(azul, 255);
+              digitalWrite(verde, 255);
+              digitalWrite(vermelho, 0);
+          } if (readString.indexOf("?cor2") > 0) {
+              digitalWrite(azul, 255);
+              digitalWrite(verde, 0);
+              digitalWrite(vermelho, 255);
+          } if (readString.indexOf("?cor3") > 0) {
+              digitalWrite(azul, 0);
+              digitalWrite(verde, 255);
+              digitalWrite(vermelho, 0);
+          } if (readString.indexOf("?cor4") > 0) {
+              digitalWrite(azul, 255);
+              digitalWrite(verde, 100);
+              digitalWrite(vermelho, 100);
+          } if (readString.indexOf("?cor5") > 0) {
+              digitalWrite(azul, 255);
+              digitalWrite(verde, 255);
+              digitalWrite(vermelho, 255);
+          } if (readString.indexOf("?cor6") > 0) {
+              digitalWrite(azul, 0);
+              digitalWrite(verde, 0);
+              digitalWrite(vermelho, 0);
+          } if (readString.indexOf("?cor7") > 0) {
+              digitalWrite(azul, 30);
+              digitalWrite(verde, 60);
+              digitalWrite(vermelho,100);
+          }
+         
+          readString = "";
+          client.println("HTTP/1.1 200 OK");
+          client.println("Content-Type: text/html");
+          client.println("Connection: close");
+          client.println();
+          client.println("<html>");
+          client.println("<head>");
+          client.println("<title>Pac 2</title>");
+          client.println("</head>");
+          client.println("<style>body{margin:10px 10px 10px 10px;font-family: Georgia, 'Times New Roman', Times, serif;}</style><style>body{margin:10px 10px 10px 10px;font-family: Georgia, 'Times New Roman', Times, serif;}</style>");
+          client.println("<body>");
+          client.println("<div>Ligar e Desligar Led</div>");
+          client.println("<a href=\"/?ledon\">desliga o led</a>");
+          client.println("<a href=\"/?ledoff\">liga o led</a><br />");
+
+          client.println("<div>Controla cor rgb</div>");
+          client.println("<a href=\"/?cor1\">cor1</a>");
+          client.println("<a href=\"/?cor2\">cor2</a><br />");
+          client.println("<a href=\"/?cor3\">cor3</a>");
+          client.println("<a href=\"/?cor4\">cor4</a><br />");
+          client.println("<a href=\"/?cor5\">Branco</a>");
+          client.println("<a href=\"/?cor6\">cor6</a><br />");
+          client.println("<a href=\"/?cor7\">cor7</a>");
+         
+//          client.println("<h3>range com LED RGB</h3>");
+//          // VERIFICAR ESTÁ PARTE TAMBÉM
+//           //PARTE NA QUAL FALTAVA VERIFICAR SE O LOCAL ONDE FOI POSTO ESTÁ CORRETO
+//           if(readString.startsWith("POST"))
+//                                        {
+//                                              String conteudo_POST = "";
+//                                              for(int i=0;i<26;i++)
+//                                              {
+//                                                  c = client.read();  
+//                                                  conteudo_POST += c;
+//                                                  
+//                                              }
+//                                              //ALTEREI TIREI OS PWM'S
+//                                                   vm = conteudo_POST.substring((conteudo_POST.indexOf("PWMvm") + 5),(conteudo_POST.indexOf("PWMvm") - 1)).toInt();
+//                                                   vd = conteudo_POST.substring((conteudo_POST.indexOf("PWMvd") + 5),(conteudo_POST.indexOf("PWMvd") - 1)).toInt();
+//                                                   az = conteudo_POST.substring((conteudo_POST.indexOf("PWMaz") + 5),(conteudo_POST.indexOf("PWMaz") + 8)).toInt();
+//                                                   analogWrite(2,vm);
+//                                                   analogWrite(4,vd);
+//                                                   analogWrite(3,az);
+//                                                   conteudo_POST = "";
+//                                                
+//                                            }
+//                                            
+           //PARTE NA QUAL FALTAVA VERIFICAR SE O LOCAL ONDE FOI POSTO ESTÁ CORRETO
+//          client.println ("<form action=\"\" method=\"post\">");
+//          client.println("<p>Porta Vermelho: " + String(vm) + "</p>");
+//          client.println("0 <input type=button value=\"\" min=\"0\"  max=\"255\" step=\"1\" onchange=\"submit()\"/>  255");
+//          client.println("<p>Porta Verde: " + String(vd) + "</p>");
+//          client.println("0 <input type=button value=\"\" min=\"0\"  max=\"255\" step=\"1\" onchange=\"submit()\"/>  255");
+//          client.println("<p>Porta Azul: " + String(az) + "</p>");
+//          client.println("0 <input type=button value=brancoFuncao() onchange=\"submit()\"/>  255");
+//          client.println ("</form>");  
+         
+          client.println("Temperatura");
+          client.println(temperature);
+          client.println("C");
+          client.println("<br />");
+          client.println("Luminosidade");
+          client.println(lumi);
+          lumi = analogRead(lumin);
+          if (lumi < 700) {
+            client.println("Dia");
+          } else {
+            client.println("Noite");
+          }
+          client.println("</body>");
+          client.println("</head>");
+          delay(1);
+          client.stop();
+          readString = "";
+        }
+      }
+    }
+  }
+}

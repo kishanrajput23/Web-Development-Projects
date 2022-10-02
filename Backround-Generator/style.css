@@ -1,0 +1,14 @@
+body{
+    background-color: rgba(184 ,226 ,214 ,0.5);
+    /* background-color: #B8E2D6; */
+    /* font-family: 'Ranchers', cursive; */
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+ }
+ .section1{
+ 
+ }
+ h1,h2,h3{
+   font-family: 'Grandstander', cursive;
+   line-height: 5rem;
+ }

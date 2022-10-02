@@ -1,0 +1,54 @@
+    body{
+    margin: 0;
+    text-align: center;
+    
+}
+h1{
+    color: #66BFBF;
+    margin: 50px,auto,0,auto;
+    font-size: 5.625rem;
+    font-family:'Sacramento', cursive;
+    
+}
+
+h2{
+    color: #66BFBF;
+    font-size: 25px;
+    font-family: 'Merriweather', serif;
+    font-weight: normal;
+}
+
+
+.top-container{
+    background-color: #E4F9F5;
+    position: relative;
+    padding-top: 50px;
+    
+}
+
+.pic{
+    border-radius: 50%;
+}
+.skill-row{
+    width: 50%;
+    margin:auto;
+    text-align: left;
+    line-height: 2;
+
+}
+.code-img {
+    width: 25;
+}
+
+
+
+/* .top-cloud{
+    position: absolute;
+    right: 500px;
+    bottom: 800px;
+}
+.bottom-cloud{
+    position: absolute;
+    left: 450px;
+    bottom: 650px;
+} */

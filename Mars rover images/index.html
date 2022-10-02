@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mars rover</title>
+
+    </head>
+    <body>
+        <style>
+            #upper{
+                height: 30vh;
+                background-color: antiquewhite;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+            #lower{
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+
+        </style>
+        <div id="upper">
+            <div>
+            <label for="date">Date</label>
+            <input type="date" name="date" id="date">
+            </div>
+            <button type="submit" id="submit">Get Images</button>
+            
+        </div>
+        <div id="lower">
+
+        </div>
+
+        <script src="jquery-3.6.1.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

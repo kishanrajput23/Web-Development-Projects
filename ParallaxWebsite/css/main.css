@@ -1,0 +1,355 @@
+*{
+  box-sizing: border-box;
+  /* border: solid 5px red; */
+}
+body, html{
+  height: 100%;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.8em;
+  color: #666;
+}
+
+h1, h2{
+  font-family: 'Pacifico', cursive;
+  font-size: 40px;
+}
+
+p, span{
+  font-family: 'Arimo', serif;
+  font-size: 20px;
+}
+
+/* Scrolling Effect */
+.parallax-img1, .parallax-img2, .parallax-img3{
+  position: relative;
+  opacity: 0.70;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /*
+  fixed = parallax
+  scroll = normal
+  */
+  background-attachment: fixed;
+}
+
+/* import images and position them */
+.parallax-img1{
+  background-image: url('../img/img1.jpeg');
+  min-height: 100%;
+}
+
+.parallax-img2{
+  background-image: url('../img/img2.jpeg');
+  min-height: 400px;
+}
+
+.parallax-img3{
+  background-image: url('../img/img3-3.jpeg');
+  min-height: 400px;
+}
+
+
+/* Section Styling */
+
+.section{
+  text-align: center;
+  padding: 50px 80px;
+}
+
+.section-light{
+  background-color: #E8E8E8;
+  color:#666;
+}
+
+.section-dark{
+  background-color:#282e34;
+  color: #ddd;
+}
+
+
+/* image text and content styling */
+.ptext{
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+  font-size: 27px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+}
+
+.ptext .border img{
+  position: relative;
+  top: -195px;
+  left: -20px;
+  max-height: 390px;
+  opacity: 0.90;
+}
+
+.ptext .border.trans{
+  background-color: transparent;
+}
+
+/* Header Video Conent styling */
+.v-header{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.container{
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: auto;
+  text-align: center;
+  overflow: hidden;
+}
+
+.fullscreen-video-wrap{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.fullscreen-video-wrap video{
+  min-width: 116%;
+  min-height: 100%;
+  margin-bottom: -500px;
+  margin-left: -290px;
+}
+
+.header-overlay{
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #d3d3d3;
+  z-index: 1;
+  opacity: 0.40;
+
+}
+
+.header-content{
+  /* border:  solid 5px white; */
+  z-index: 2;
+  max-height: 100vh;
+  max-width: 100vw;
+  margin:  0 auto;
+
+}
+
+/* Logo & name */
+
+.logo img{
+  /* background-color: lightgray; */
+  margin-top: 30px;
+  max-width: 100vw;
+  /* margin-left: -100px; */
+}
+
+.logo-name img{
+  /* background-color: lightblue; */
+  max-width: 100vw;
+  height: 270px;
+  position:  relative;
+  bottom: 320px;
+
+}
+
+
+.header-content h1{
+  font-size: 50px;
+  margin-bottom: 0;
+  /* align-content: center; */
+}
+
+.header-content p{
+  font-size: 1.5rem;
+  display: block;
+  padding-bottom: 2rem;
+}
+
+/* About Me Button */
+.logo-name a{
+  /* background-color: lightgreen; */
+  display: block;
+  left: 0;
+}
+.btn{
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  position: relative;
+  bottom: 320px;
+  left: 28px;
+}
+
+/* Hover Shaking effect */
+.btn:hover, .ptext .border img:hover{
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+
+/* Rating styling */
+.checked {
+    color: orange;
+}
+
+.rating{
+  display: inline-block;
+  padding: 20px;
+}
+
+/* skills */
+
+.skill-container {
+  width: 100%;
+  background-color: #ddd;
+}
+
+.skills {
+  text-align: right;
+  padding-right: 20px;
+  line-height: 40px;
+  color: white;
+}
+
+.skill-name{
+  text-align: left;
+  margin: 15px 0;
+}
+
+.learn{ width: 100%;
+  background-color: #616161;
+}
+.back-end {
+  width: 90%;
+  background-color: #616161;
+}
+.front-end {
+  width: 85%;
+  background-color: #616161;
+}
+.testing {
+  width: 80%;
+  background-color: #616161;
+}
+.design {
+  width: 75%;
+  background-color: #616161;
+}
+
+/* Mobile friendly */
+@media(max-width:960px){
+  .fullscreen-video-wrap video{
+    min-width: 116%;
+    min-height: 100%;
+    margin-bottom: -500px;
+    margin-left: -520px;
+  }
+}
+
+@media (max-width:720px) {
+  .fullscreen-video-wrap video{
+    min-width: 116%;
+    min-height: 100%;
+    margin-bottom: -500px;
+    margin-left: -640px;
+  }
+}
+
+@media(max-width:568px){
+
+  .fullscreen-video-wrap video{
+    margin-left: -800px;
+  }
+
+  .parallax-img1, .parallax-img2, .parallax-img3{
+    background-attachment: scroll;
+  }
+
+  .header-content{
+    max-width: 400px
+  }
+  .logo{
+    max-width: 367px;
+  }
+
+  .logo-name img{
+    /* background-color: red; */
+    position: relative;
+    left: -110px;
+    bottom: 200px;
+    max-width: 600px;
+  }
+
+  .logo img{
+    position: relative;
+    top: 80px;
+    max-width: 390px;
+  }
+
+  .btn{
+    bottom: 210px;
+    left: -8px;
+  }
+
+  .container{
+    max-width: 568px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: auto;
+  }
+
+  .ptext .border img{
+    position: relative;
+    top: -180px;
+    left: 20px;
+    max-width: 500px;
+  }
+
+  .rating{
+    display: block;
+  }
+  .rating .skill{
+    display: block;
+  }
+  .parallax-img2 .ptext .border img{
+    max-width: 370px;
+  }
+
+  .parallax-img3 .ptext .border img{
+    max-width: 370px;
+  }
+}

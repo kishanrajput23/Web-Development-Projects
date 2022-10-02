@@ -1,0 +1,238 @@
+.jjj {
+
+  text-align: center;
+
+}
+
+body {
+
+  background-color: white;
+
+  text-align: centre;
+
+}
+
+.team {
+
+  background-color: Purple;
+
+}
+
+form {
+
+  border-width: 1px;
+
+  border-style: solid;
+
+  border-color: grey;
+
+  padding-left: 0px;
+
+  height: 360px;
+
+  border-radius: 10px;
+
+  width: 340px;
+
+}
+
+button {
+
+  background-color: rgb(139, 38, 240);
+
+  width: 325px;
+
+  height: 45px;
+
+}
+
+h3 {
+
+  font-size: 25px;
+
+}
+
+.order {
+
+  text-align: center;
+
+}
+
+.yt {
+
+  border-radius: 15px;
+
+  border: 1px solid grey;
+
+  padding: 20px;
+
+  width: 300px;
+
+  color: grey;
+
+}
+
+.aka {
+
+  border-radius: 15px;
+
+  border: 1px solid grey;
+
+  padding: 20px;
+
+  width: 300px;
+
+  color: grey;
+
+}
+
+.what {
+
+  border-radius: 15px;
+
+  border: 1px solid grey;
+
+  padding: 20px;
+
+  width: 300px;
+
+  color: grey;
+
+}
+
+.fun {
+
+  border-radius: 15px;
+
+  border: 1px solid grey;
+
+  padding: 20px;
+
+  width: 300px;
+
+  color: grey;
+
+}
+
+.nice {
+
+  border-radius: 15px;
+
+  border: 1px solid grey;
+
+  padding: 20px;
+
+  width: 300px;
+
+  color: grey;
+
+}
+
+.tv {
+
+  color: black;
+
+}
+
+.tab {
+
+  color: black;
+
+}
+
+.top {
+
+  color: black;
+
+}
+
+.lap {
+
+  color: black;
+
+}
+
+. phone {
+
+  color: black;
+
+}
+
+.uip {
+
+  text-align: center;
+
+}
+
+.yup {
+
+  position: fixed;
+
+  right: 10px;
+
+  bottom: 10px
+
+}
+
+.navbar li {
+
+  display: inline;
+
+  font-size: 20px;
+
+  margin: 60px;
+
+}
+
+.navbar li a {
+
+  color: black;
+
+  text-decoration: none;
+
+  display: inline;
+
+  background-color: rgb(139, 38, 240);
+
+}
+
+header {
+
+  display: inline;
+
+}
+
+.kill {
+
+  background-color: rgb(214, 212, 255);
+
+  text-align: center;
+
+}
+
+.kill h4 b {
+
+  font-size: 22px;
+
+}
+
+.kill img {
+
+  border: 1px solid grey;
+
+  border-radius: 10px;
+
+}
+
+.of {
+
+  color: grey;
+
+}
+
+.kill button {
+
+  width: 120px;
+
+}
+

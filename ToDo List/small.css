@@ -1,0 +1,33 @@
+#add-new-task{  
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#new-task{
+    width: 270px;
+    display: block;
+    margin: 80px auto 20px auto;
+}
+#new-task::placeholder{
+    text-align: center;
+}
+#new-task-submit{
+    display: block;
+    margin: auto;
+}
+.task-list{
+    width: 200px;
+    flex-wrap: wrap;
+}
+
+.button{
+    font-size: 0.9rem;
+}
+.line{
+    display: none;
+}
+.actions{
+    margin: 3px auto 0px auto;
+    display: flex;
+    flex-direction: row;
+}

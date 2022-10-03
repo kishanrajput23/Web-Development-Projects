@@ -1,0 +1,59 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.fadeIn {
+  -webkit-animation: fadeIn 3s ease-in-out;
+  -moz-animation: fadeIn 3s ease-in-out;
+  -o-animation: fadeIn 3s ease-in-out;
+  animation: fadeIn 3s ease-in-out;
+}
+
+.gradient {
+  background: -webkit-linear-gradient(135deg, #8929ad, #436aac, #43b7b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-btn {
+  background-image: linear-gradient(135deg, #8929ad, #436aac, #43b7b8);
+  border-color: linear-gradient(135deg, #8929ad, #436aac, #43b7b8);
+  border: none;
+}
+.gradient:hover{
+  color: #ffa62b;
+}
+.fade:hover {
+  opacity: 0.5;
+}
+.fade {
+  opacity: 1;
+}
+
+@keyframes bounce {
+  40% {
+    transform: translateY(-20px);
+    opacity: 0.4;
+  }
+  60% {
+    transform: translateY(-10px);
+    opacity: 0.6;
+  }
+}
+
+.bounce {
+  animation: bounce 1.7s infinite;
+  -webkit-animation: bounce 1.7s infinite;
+}
+
+.shadow {
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.2);
+}
+
+.shadow:hover {
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.6);
+}
+
+.load-hidden {
+  visibility: hidden;
+}

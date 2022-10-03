@@ -1,0 +1,76 @@
+<div class="container">
+  <h1>Level 1 Form</h1>
+  <br />
+  <h3>Simple form taking general information as input.</h3>
+  <br />
+  <form [formGroup]="level1_form">
+    <p>First Name</p>
+    <input
+      type="text"
+      name="firstname"
+      id="firstname"
+      formControlName="firstname"
+    />
+
+    <p>Last Name</p>
+    <input
+      type="text"
+      name="lastname"
+      id="lastname"
+      formControlName="lastname"
+    />
+
+    <p>Email</p>
+    <input type="email" name="email" id="email" formControlName="email" />
+
+    <p>Gender</p>
+    <input
+      type="radio"
+      name="gender"
+      id="gender"
+      value="male"
+      formControlName="gender"
+    />
+    male
+    <input
+      type="radio"
+      name="gender"
+      id="gender"
+      value="female"
+      formControlName="gender"
+    />
+    female
+
+    <p>Address</p>
+    <textarea
+      name="address"
+      id="address"
+      cols="30"
+      rows="5"
+      formControlName="address"
+    ></textarea>
+
+    <p>Contact</p>
+    <input
+      type="number"
+      name="contact"
+      id="contact"
+      formControlName="contact"
+    />
+
+    <br />
+    <br />
+
+    <input type="submit" value="Submit" (click)="onSubmit()" />
+    &nbsp; &nbsp;
+    <input type="submit" value="Clear" (click)="onClear()" />
+  </form>
+</div>
+
+<br /><br />
+
+<div class="data" *ngIf="form_data">
+  <p>{{ form_data | json }}</p>
+</div>
+
+<br /><br />

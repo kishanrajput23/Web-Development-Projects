@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: #f68989;
+  padding: 40px;
+  font-size: large;
+  font-family: "Courier New", Courier, monospace;
+}
+
+p {
+  margin: 10px 0 0 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 10px 0;
+  border: none;
+}
+
+input[type="submit"] {
+  padding: 10px 10px;
+  width: 20%;
+  background-color: #874356;
+  border: none;
+  color: white;
+}
+
+input[type="submit"]:hover {
+  background-color: #c65d7b;
+  cursor: pointer;
+}
+
+button {
+  padding: 10px 10px;
+  width: 20%;
+  background-color: #c65d7b;
+  border: none;
+  color: white;
+}
+
+button:hover {
+  background-color: #874356;
+  cursor: pointer;
+}
+
+.student {
+  padding: 10px;
+  background-color: #874356;
+}
+
+.result {
+  padding: 10px;
+  background-color: #f6e7d8;
+}
+
+.data {
+  background-color: #f6e7d8;
+  padding: 40px;
+  font-size: large;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.secondary {
+  background-color: #f6e7d8;
+  color: black;
+}
+
+.secondary:hover {
+  background-color: #c65d7b;
+}

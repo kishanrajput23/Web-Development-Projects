@@ -1,0 +1,105 @@
+<div class="container">
+  <h1>Level 3 Form</h1>
+  <br />
+  <h4>Nested , containing list of students with multiple subject results.</h4>
+  <br />
+  <form [formGroup]="level3_form">
+    <div formArrayName="students">
+      <div
+        *ngFor="
+          let student of getStudentsArray().controls;
+          let studentIndex = index
+        "
+      >
+        <div [formGroupName]="studentIndex" class="student">
+          <button (click)="removeStudent(studentIndex)" class="secondary">
+            Delete Student
+          </button>
+          <br /><br />
+          <p>First Name</p>
+          <input
+            type="text"
+            name="firstname"
+            id="firstname"
+            formControlName="firstname"
+          />
+
+          <p>Last Name</p>
+          <input
+            type="text"
+            name="lastname"
+            id="lastname"
+            formControlName="lastname"
+          />
+
+          <p>Class</p>
+          <input type="text" name="class" id="class" />
+
+          <br /><br />
+
+          <div formArrayName="result">
+            <div
+              *ngFor="
+                let result of getResultArray(studentIndex).controls;
+                let resultIndex = index
+              "
+            >
+              <div [formGroupName]="resultIndex" class="result">
+                <button
+                  (click)="
+                    deleteSubjectFromResultArray(studentIndex, resultIndex)
+                  "
+                >
+                  Delete Subject
+                </button>
+                <br /><br />
+                <input
+                  type="text"
+                  name="subject"
+                  id="subject"
+                  formControlName="subject"
+                  placeholder="subject"
+                />
+                &nbsp; &nbsp;
+                <input
+                  type="number"
+                  name="marks"
+                  id="marks"
+                  formControlName="marks"
+                  placeholder="marks"
+                />
+
+                <br /><br />
+              </div>
+
+              <br /><br />
+            </div>
+          </div>
+
+          <button
+            (click)="addSubjectToResultArray(studentIndex)"
+            class="secondary"
+          >
+            Add Subject
+          </button>
+
+          <br /><br />
+        </div>
+
+        <br /><br />
+      </div>
+    </div>
+
+    <button (click)="addStudent()">Add Student</button>
+
+    <br /><br />
+
+    <input type="submit" value="Submit" (click)="onSubmit()" />
+    &nbsp; &nbsp;
+    <input type="submit" value="Clear" (click)="onClear()" />
+  </form>
+</div>
+
+<div class="data" *ngIf="form_data">
+  {{ form_data | json }}
+</div>

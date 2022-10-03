@@ -1,32 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>lightonoff</title>
 </head>
-
 <body>
-    <div class="container">
-        <div class="box">
+    <div class="main-heading">
+        <h1 id="light">Can You Turn The Light On?</h1>
 
-            
-            
-            <h1>Can You turn the light on</h1>
+        <button onclick="document.getElementById('myimage').src='lighton.png'">turn on light</button>
 
+        <img src="lightoff.png" alt="lightoffpic" id="myimage">
 
-            <button onclick="document.getElementById('my-img').src='image/light-bulb-on.png'" class="btn" id="onbtn1">Turn on the light</button>
+        <button onclick="document.getElementById('myimage').src='lightoff.png'">turn off light</button>
 
-
-            <img src="image/light-bulb-off.png" alt="onpng" id="my-img">   
-             
-            <button onclick="document.getElementById('my-img').src='image/light-bulb-off.png'" class="btn" id="onbtn2">turn off the light</button>
-        </div>
-    </div> 
-
-    </body>
-
+    </div>
+</body>
 </html>

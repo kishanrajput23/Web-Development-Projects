@@ -1,0 +1,109 @@
+body{
+    background-color: rgb(248, 234, 217);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+
+}
+nav{
+    font-family: 'Times New Roman', Times, serif;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    list-style-type:  none ;
+    height: 65px;
+    background-color: black;
+    color: azure;
+
+}
+nav ul li{
+    padding: 0 12px;
+}
+.brand img{
+    width: 44px;
+    padding:0 8px ;
+}
+.brand{
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.4rem;
+}
+.container{
+    min-height: 72vh;
+    background-color: black;
+    color:white;
+    font-family: 'Times New Roman', Times, serif;
+     display: flex;
+     width: 70%;
+     margin: 23px auto;
+     border-radius: 18px;
+     padding: 34px;
+     background-image:url("bg.jpg");
+
+}
+.bottom{
+    position: sticky;
+    height: 130px;
+    background-color: black;
+    bottom: 0;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+
+}
+.icons{
+    margin-top: 14px;
+}
+.icons{
+    cursor:pointer;
+}
+#myProgressBar{
+    width:80vw;
+    text-align: center;
+    cursor: pointer;
+
+}
+.songItemContainer{
+    margin-top: 74px;
+}
+.songItem{
+    height: 50px;
+    display: flex;
+    background-color: white;
+    color: black;
+    width: 80%;
+    justify-content: space-between;
+    margin: 10px 0;
+    align-items: center;
+    border-radius: 34px;
+
+}
+.songItem img{
+width: 43px;
+margin: 0 20px;
+}
+.timeStamp{
+    margin: 0 20px;
+
+
+}
+.timeStamp i{
+cursor: pointer;
+}
+.songInfo{
+    position: absolute;
+    left: 1px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.songInfo img{
+    width: 100px;
+    opacity: 0;
+    transition: opacity 0.8s ease-in ;
+}

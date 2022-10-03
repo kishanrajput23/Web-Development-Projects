@@ -1,0 +1,79 @@
+<div class="container">
+  <h1>Level 2 Form</h1>
+  <br />
+  <h3>Form containing list of subjects.</h3>
+  <br />
+  <form [formGroup]="level2_form">
+    <p>First Name</p>
+    <input
+      type="text"
+      name="firstname"
+      id="firstname"
+      formControlName="firstname"
+    />
+
+    <p>Last Name</p>
+    <input
+      type="text"
+      name="lastname"
+      id="lastname"
+      formControlName="lastname"
+    />
+
+    <p>Class</p>
+    <input type="text" name="class" id="class" formControlName="class" />
+
+    <p>Result:</p>
+    <div formArrayName="result">
+      <div
+        *ngFor="
+          let result of getResultArray().controls;
+          let resultIndex = index
+        "
+      >
+        <div [formGroupName]="resultIndex" class="result">
+          <button (click)="deleteSubjectFromResultArray(resultIndex)">
+            Delete Subject
+          </button>
+          <br><br>
+          <input
+            type="text"
+            name="subject"
+            id="subject"
+            formControlName="subject"
+            placeholder="subject name"
+          />
+          &nbsp; &nbsp;
+          <input
+            type="number"
+            name="marks"
+            id="marks"
+            formControlName="marks"
+            placeholder="marks"
+          />
+
+          <br /><br />
+        </div>
+
+        <br><br>
+
+      </div>
+    </div>
+
+    <button (click)="addSubjectToResultArray()">Add Subject</button>
+
+    <br /><br />
+
+    <input type="submit" value="Submit" (click)="onSubmit()" />
+    &nbsp; &nbsp;
+    <input type="submit" value="Clear" (click)="onClear()" />
+  </form>
+</div>
+
+<br /><br />
+
+<div class="data" *ngIf="form_data">
+  <p>{{ form_data | json }}</p>
+</div>
+
+<br /><br />

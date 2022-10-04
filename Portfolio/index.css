@@ -1,0 +1,89 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background: url("https://wallpapertag.com/wallpaper/full/1/f/5/479194-cool-cool-color-backgrounds-2560x1600-for-hd-1080p.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.container{
+    width: 350px;
+    height: 590px;
+    border-radius: 5px;
+    border: 2px solid white;
+    margin-top: 40px;
+}
+
+.my-image{
+   
+    margin-top: 30px;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-repeat: no-repeat;
+   
+}
+
+h1{
+    color: white;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.button-style{
+margin-top: 10px;
+background-color: yellow;
+border: 2px solid black;
+box-shadow: 2px 2px;
+font-size: 20px;
+
+}
+
+h3{
+    color: blue;
+}
+
+p{
+    color: white;
+}
+hr{
+    color: white;
+    font-weight: 900;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+    border-radius: 2px;
+    margin-top: 20px;
+
+}
+
+
+.fa-twitter {
+    background: #007bb5;
+    color: white;
+    border-radius: 2px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+@media (max-width: 800px) {
+    .container{
+        width: 80%;
+        height: 90%;
+        border-radius: 5px;
+        border: 2px solid white;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOUDIP DAS | Guess the number Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="guess_the_num.css">
+    <script src="gtn.js"></script>
+</head>
+<body>
+    <section>
+        <div class="box">
+            <div class="container">
+               <div class="first_half">
+                <div class="textarea">
+                    Guess The Number ( 1-100 )
+                </div>
+                <div class="first_row">
+                    <button id="ng" class="start" onclick="num_gen(this)">
+                        Start
+                    </button>
+                    <div class="chance">
+                        Chance left : 12
+                    </div>
+                    <div class="score">
+                        Score : 100
+                    </div>
+                </div>
+                <div class="display_area">
+                    <input type="numeric" readonly id="user" disabled placeholder="Click the Start button" onclick="initialize()">
+                </div>
+                <div class="modify">
+                    <button class="modify_b" id="b1" disabled onclick="inc_b()"> 
+                        +10
+                    </button>
+                    <button class="modify_b" id="b2" disabled onclick="inc()">
+                        +1
+                    </button>
+                    <button class="modify_b"  id="b3" disabled onclick="dec()">
+                        -1
+                    </button>
+                    <button class="modify_b"  id="b4" disabled onclick="dec_s()">
+                        -10
+                    </button>
+                </div>
+
+            <div class="send">
+                <button id="submit" class="check-pushable" disabled onclick="get_input() ">
+                    <span class="check-shadow"></span>
+                    <span class="check-edge"></span>
+                    <span class="check-front text"> Check</span>
+                </button>
+                <div class="invalid">
+                    Invalid input
+                </div>
+            </div>
+               </div>
+               <div class="second_half">
+                <div class="row1">
+                    <div class="toobig">
+                        Oops ! too big
+                    </div>
+                    <div class="toosmall">
+                        Oops ! too small
+                    </div>
+                </div>
+                <div class="row2">
+                    <div class="almost">
+                        Almost There !
+                    </div>
+                    <button id="success" disabled onclick="reload();">
+                        Click to reset
+                    </button>
+                </div>
+               </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

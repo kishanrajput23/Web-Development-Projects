@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            Camply<sup class="text-muted"> IN</sup>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="d-flex flex-column flex-sm-row w-100 justify-content-between justify-content-lg-between">
+                <div class="navbar-nav text-center text-sm-start">
+                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link d-lg-none d-xl-block" href="/campgrounds">All Campgrounds</a>
+                    <a class="nav-link d-lg-none d-xl-block" href="/campgrounds/new">New Campground</a>
+                    <a class="nav-link d-lg-none d-xl-block" href="/mycampgrounds">My Campgrounds</a>
+
+                    <li class="nav-item dropdown d-none d-lg-flex d-xl-none">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Campgrounds
+                        </a>
+                        <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="/campgrounds">All Campgrounds</a></li>
+                            <li><a class="dropdown-item" href="/campgrounds/new">Add a New Campground</a></li>
+                            <li><a class="dropdown-item" href="/mycampgrounds">View My Campgrounds</a></li>
+                        </ul>
+                    </li>
+                </div>
+
+                <hr class="d-md-none bg-white">
+
+                <div
+                    class="navbar-nav d-flex flex-column align-items-center align-items-sm-end flex-lg-row flex-lg-fill">
+                    <form action="/campgrounds/search" method="GET" class="d-flex my-3 my-lg-0 flex-grow-1 mx-lg-5">
+                        <input name="q" id="search" type="search" placeholder="Search Campgrounds" aria-label="Search"
+                            class="form-control w-100 me-2 bg-dark text-white btn-outline-secondary">
+                        <button class="btn btn-outline-secondary" type="submit" aria-label="search"><i
+                                class="bi bi-search"></i></button>
+                    </form>
+                    <% if (!currentUser) { %>
+                        <a class="nav-link" href="/login">Log In</a>
+                        <a class="nav-link" href="/register">Register</a>
+                        <% } else { %>
+                            <span class="navbar-text text-success">
+                                Welcome, <%= currentUser.capitalized %>!
+                            </span>
+                            <a class="nav-link" href="/logout">Log Out</a>
+                            <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- title -->
+    <title>Yelp Camp</title>
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+    <!-- Bing Maps API -->
+    <script type='text/javascript' src="https://www.bing.com/api/maps/mapcontrol?callback=loadMapScenario" async
+        defer></script>
+</head>
+
+<body class="p-0">
+    <nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-top">
+        <div class="container-lg">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span
+                    class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-header">
+                <a href="/" class="navbar-brand">
+                    <img src="/images/placeholder_images/logo.png" width="130" height="30" loading="lazy" alt="logo">
+                </a>
+            </div>
+            <form action="/campgrounds" class="form text-center search d-none d-md-block" method="GET">
+                <div class="form-group mx-auto my-0">
+                    <div class="input-group search-bar">
+                        <input type="text" class="form-control" name="search" id="search"
+                            placeholder="Search Campgrounds" />
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-outline-light">
+                                <i class="fa fa-search mx-2 mx-md-0"></i> <span class="d-none d-md-inline">Search</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item"> <a href="/campgrounds" class="nav-link">campgrounds</a> </li>
+                    <% if(!currentUser) {%>
+                    <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
+                    <li class="nav-item"><a href="/register" class="nav-link">Sign Up</a></li>
+                    <%} else { %>
+                    <li class="nav-item">
+                        <a href="/users/<%= currentUser._id %>/dashboard" class="nav-link">
+                            <i class="fa fa-user-circle"></i> <%= currentUser.firstname%>
+                        </a>
+                    </li>
+                    <li class="nav-item"><a href="/logout" class="nav-link">Log Out</a></li>
+                    <% }%>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container alert-wrapper">
+        <% if(error && error.length > 0){ %>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert"><%= error %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+        <div class="alert alert-success alert-dismissible fade show" role="alert"><%= success %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <% } %>
+        <% if(info && info.length > 0){ %>
+        <div class="alert alert-info alert-dismissible fade show" role="alert"><%= info %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <% } %>
+    </div>

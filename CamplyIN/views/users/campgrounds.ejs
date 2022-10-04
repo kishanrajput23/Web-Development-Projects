@@ -1,0 +1,40 @@
+<%- layout('layouts/boilerplate') %>
+
+    <div class="text-center">
+        <h1>Campgrounds by <%= currentUser.username.slice(0,1).toUpperCase() + currentUser.username.slice(1) %>
+        </h1>
+        <p><a href="/campgrounds/new">Add a New Campground</a></p>
+    </div>
+
+    <section class="row d-flex justify-content-center">
+
+        <% for (let camp of campgrounds) { %>
+            <div class="card camp-card">
+                <div class="row g-0">
+                    <div class="col-md-6 card-img-left d-flex align-items-center bg-light">
+                        <img class="img-fluid" alt=""
+                            src="<%= camp.images[0] ? camp.images[0].url : 'https://images.unsplash.com/photo-1468245856972-a0333f3f8293?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' %>">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="/campgrounds/<%= camp._id %>">
+                                    <%= camp.name %>
+                                </a>
+
+                            </h5>
+                            <p class="card-text">
+                                <small>
+                                    <%= camp.description.substring(0, 150) %>
+                                </small>
+                            </p>
+                            <p class="card-text text-muted">
+                                <%= camp.location %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+
+    </section>

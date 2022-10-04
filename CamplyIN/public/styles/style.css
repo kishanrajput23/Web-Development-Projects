@@ -1,0 +1,157 @@
+a {
+    color: #198754;
+  }
+  
+  a:hover {
+    color: black;
+  }
+  
+  /* flash alerts  */
+  .flashes {
+    max-width: 500px;
+    min-width: 30vw;
+    padding: 10px;
+    margin: 60px auto;
+    margin-bottom: 0;
+  }
+  
+  .alert {
+    font-size: 0.9rem;
+    z-index: 4;
+  }
+  
+  /* new & edit forms  */
+  .custom-file-label {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #000a;
+  }
+  
+  /* navbar  */
+  nav .dropdown-item {
+    line-height: 2;
+    color: snow;
+  }
+  
+  /* nav a.nav-link:hover
+  {
+    color: #198754 !important;
+  } */
+  
+  /* campgrounds/edit  */
+  .delete-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 1rem 0;
+  }
+  
+  .delete-item {
+    position: relative;
+    padding: 0;
+    height: 100%;
+    border: 2px solid transparent;
+  }
+  
+  .delete-item img {
+    width: 200px;
+    height: auto;
+  }
+  
+  .delete-item input {
+    position: absolute;
+    top: 2px;
+    right: 4px;
+  }
+  
+  /* login & register  */
+  .user {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  /* mapbox  */
+  #map,
+  #cluster-map {
+    width: 100%;
+    background-color: white;
+  }
+  
+  #map {
+    height: 60vh;
+  }
+  
+  #cluster-map {
+    position: absolute;
+    top: 57px;
+    left: 0;
+    height: 70vh;
+    width: 99vw;
+  }
+  
+  #cluster-map-space {
+    position: relative;
+    height: 70vh;
+    width: 100%;
+    /* background-color: honeydew; */
+  }
+  
+  /* campgrounds/index  */
+  .camp-card {
+    margin: 10px;
+  }
+  @media (min-width: 1200px) {
+    .camp-card {
+      width: 45%;
+    }
+  }
+  
+  .camp-image {
+    /* display: flex;
+    align-items: center; */
+    background-color: #1987541a;  
+    /* border-right: 1px solid #aaa4; */
+    background-image: url('https://images.unsplash.com/photo-1468245856972-a0333f3f8293?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    /* background-position: center; */
+  }
+  
+  /* validation  */
+  
+  .invalid {
+    color: #dc3545;
+    border: 1px solid #dc3545aa;
+  }
+  
+  .invalid-text {
+    color: #dc3545;
+  }
+  
+  /* Footer  */
+  
+  footer a {
+    color: #fff9;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    color: white;
+  }
+  
+  /* carousel  */
+  #camp-carousel .carousel-inner {
+    height: 45vh;
+    background-color: whitesmoke;
+  }
+  
+  /* pagination  */
+  .page-link {
+    color: #198754;
+  }
+  
+  .page-item.active .page-link {
+    color: white;
+    background-color: #198754;
+    border-color: #198754;
+  }

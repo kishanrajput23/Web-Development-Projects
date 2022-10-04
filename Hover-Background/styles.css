@@ -1,0 +1,37 @@
+body,
+html {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.background {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background: black;
+}
+
+.row {
+    position: relative;
+    top: -45vh;
+    right: 8vw;
+    display: flex;
+    font-size: 3.5rem;
+    transform: rotate(-30deg);
+    padding: 1rem;
+}
+
+i {
+    color: rgb(30, 29, 29);
+    background-color: transparent;
+    transition: 1s;
+    padding: 1rem;
+}
+
+i:hover {
+    transition: 0s;
+    color: hotpink;
+    text-shadow: 0 0 5rem hotpink;
+}
+

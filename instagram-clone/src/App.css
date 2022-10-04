@@ -1,0 +1,29 @@
+*{
+  margin: 0;
+  
+}
+
+.app{
+  background-color: #fafafa;
+  
+}
+.app_header{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  object-fit: contain;
+  padding: 10px;
+  border-bottom: 1px solid lightgray;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.app_posts{
+  padding: 20px;
+}
+
+.app_headerImage{
+  object-fit: contain;
+}

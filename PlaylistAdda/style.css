@@ -1,0 +1,136 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.stickheader {
+  padding: 10px 30px;
+  background: black;
+  color: #f1f1f1;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+#head:hover {
+  color: black;
+  background-color: greenyellow;
+}
+
+.stickheader input {
+  outline: none;
+  border-radius: 10px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: arial;
+}
+
+.subtitle {
+  padding: 100px;
+  margin: 35px;
+  text-align: center;
+  font-family: cursive;
+}
+
+#search_bar {
+  float: right;
+  display: block;
+  text-align: left;
+  width: 30%;
+  margin-right: 1%;
+  padding: 10px;
+}
+
+   .main {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        margin: 2%;
+    }
+
+    .card {
+        width: 20.01%;
+        display: inline-block;
+        box-shadow: 2px 2px 10px silver;
+        border-radius: 5px;
+        margin: 2% auto;
+    }
+
+    @media (max-width:1368px){
+        .card{
+            width: 25.01%;
+        }
+    }
+    @media (max-width:1070px){
+        .card{
+            width: 40%;
+            margin: 2.5% auto;
+        }
+    }
+    @media (max-width:700px){
+        .card{
+            width: 70%;
+            margin: 4% auto;
+        }
+    }
+.card:hover {
+  box-shadow: 2px 2px 20px grey;
+}
+
+.image img {
+  width: 100%;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.title {
+  text-align: center;
+  padding: 10px;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+.des {
+  padding: 3px;
+  text-align: center;
+
+  padding-top: 10px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+button {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  background-color: gray;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  opacity: 0.7;
+}
+
+button:hover {
+  background-color: greenyellow;
+  color: black;
+  transition: 0.3s;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.footer-heart {
+  font-size: larger;
+  text-align: center;
+  margin-top: 200px;
+}

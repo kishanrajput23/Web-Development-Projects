@@ -1,0 +1,125 @@
+.project {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  grid-gap: 3%;
+}
+
+.project-informations {
+  text-align: left;
+}
+
+.project-button {
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 2em;
+  box-sizing: border-box;
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+}
+
+@media all and (max-width: 30em) {
+  .project-button {
+    display: block;
+    margin: 0.2em auto;
+  }
+}
+
+.project-img {
+  margin-bottom: 20px;
+}
+
+.project-img img {
+  max-width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.project:nth-of-type(2n) .project-informations {
+  order: 2;
+}
+
+.project-informations h3 {
+  margin: 0 0;
+  font-size: 20px;
+  padding-top: 10px;
+  text-transform: uppercase;
+}
+
+.project-informations p {
+  font-size: 20px;
+}
+
+
+/*
+=============================
+View Project Button
+=============================
+*/
+.wrapper{
+    margin-bottom: 100px;
+    position: absolute;
+}
+
+.link_wrapper a{
+    display: block;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    background: #fff;
+    text-align: center;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid #555;
+    transition: all .35s;
+}   
+
+.project-icon{
+    width: 40px;
+    height: 40px;
+    border: 3px solid transparent;
+    position: absolute;
+    transform: rotate(45deg);
+    right: 0;
+    top: 0;
+    z-index: -1;
+    transition: all .35s;
+}
+
+.project-icon svg{
+    width: 30px;
+    position: absolute;
+    top: calc(50% - 15px);
+    left: calc(50% - 15px);
+    transform: rotate(-45deg);
+    fill: #333;
+    transition: all .35s;
+}
+
+.link_wrapper a:hover{
+    width: 200px;
+    border: 3px solid #333;
+    background: transparent;
+    color: #333;
+}
+
+.link_wrapper a:hover + .project-icon{
+    border: 3px solid #333;
+    right: -18%;
+}
+
+@media(max-width: 960px) {
+    .project-img {
+        margin-top: 40px;
+    }
+}

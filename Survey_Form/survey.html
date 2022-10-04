@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Survey Form using HTML and CSS</title>
+    <style>
+        * {
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    padding: 27px;
+    background-color: rgb(37, 1, 37);
+}
+
+header h1 {
+    text-align: center;
+    font-size: 50px;
+    color: rgb(253, 251, 251);
+}
+body {
+    font-weight: bold;
+    margin: 20px, 30px;
+    font-size: 20px;
+    padding: 8px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div legend h1 {
+    text-align: center;
+}
+
+.container {
+    background-color: #f2f2f2;
+    padding: 50px 20px 15px 20px;
+    border: 100px solid lightgrey;
+    border-radius: 4px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="numeric"],
+select,
+textarea {
+    background-color: rgb(204, 221, 231);
+    color: lightcoral;
+    padding: 10px;
+    border: 2x solid #ccc;
+    border-radius: 3px;
+    width: 100%;
+    cursor: pointer;
+    margin: 10px;
+}
+
+fieldset {
+    background-color: #ffff;
+    border: 2px solid #ccc;
+}
+
+.main_heading {
+    text-align: center;
+}
+
+input[type="submit"] {
+    background-color: rgb(3, 3, 3);
+    color: white;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: teal;
+}
+
+footer {
+    background-color: rgb(10, 0, 10);
+    overflow: hidden;
+}
+
+footer a {
+    text-align: center;
+    text-decoration: rgb(144, 236, 240);
+    padding: 20px;
+    float: left;
+    color: rgb(245, 239, 239);
+}
+
+a {
+    color: white;
+    text-align: right;
+    text-decoration: none;
+    padding: 10px;
+    background-color: rgb(8, 8, 8);
+    float: center;
+    border-radius: 3px;
+}
+legend h1 {
+    border-radius: 55px;
+    color: aliceblue;
+    border-width: 40px;
+    background-color: rgb(16, 28, 39);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+}
+.form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+ 
+        /* Styling form-control Label */
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+ 
+        /* Styling form-control input,
+        select, textarea */
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+ 
+        /* Styling form-control Radio
+        button and Checkbox */
+        .form-control input[type="radio"],
+        .form-control input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+        }
+ 
+        /* Styling Button */
+        button {
+            background-color: #05c46b;
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <header>
+        <h1 class="main_heading"> Survey Form</h1>
+    </header>
+    <form action="" method="GET">
+        <div class="container">
+
+
+            <legend>
+                <h1> !!WELCOME!!</h1>
+            </legend>
+
+
+            <br>
+
+           
+            <table>
+                    
+                    <div class="form-control">
+                    <label for="Name"id="label-name"> Name : </label>
+                    <input type="text" name="name" placeholder="Enter Your Name" required>
+                
+                </div>
+                <div class="form-control">
+                    <p>Id Name : <input type="text" name="id" placeholder="Enter Your ID" required></p>
+
+              </div>
+              <div class="form-control">
+                    <p>
+                        Date Of Birth: <br> <input type="date" placeholder="Enter Your Date Of Birth">
+                    </p>
+               </div>
+                <div class="form-control">
+                    <label for="age" id="label-age">
+                        Age
+                    </label>
+         
+                    <input type="text"
+                           id="age"
+                           placeholder="Enter your age" />
+                </div>
+                <div class="form-control">
+                    <p>
+                        Gender: <select name="Gender" id="gender" required>
+                                <option value="">--SELECT--</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                    </p>
+               </div>
+               <div class="form-control">
+                    <p>Email <input type="email" name="email" id="email" placeholder="Enter Your Email address" required> </p>
+               </div>
+               <div class="form-control">
+                    <p>Contact number : <input type="numeric" placeholder="Enter Your Contact Number"></p>
+               </div>
+                <div class="form-control">
+                    <label for="role" id="label-role">
+                        Which option best describes you?
+                    </label>
+                     
+                   
+                    <select name="role" id="role">
+                        <option value="">--SELECT--</option>
+                        <option value="student">Student</option>
+                        <option value="intern">Intern</option>
+                        <option value="professional">
+                            Professional
+                        </option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <fieldset>
+                    <legend>Languages and Frameworks known
+                        <small>(Check all that apply)</small>
+                    </legend>
+                   
+                <div class="form-control">
+                    
+                    <label for="inp-1">
+                        <input type="checkbox"
+                               name="inp">C</input></label>
+                    <label for="inp-2">
+                        <input type="checkbox"
+                               name="inp">C++</input></label>
+                    <label for="inp-3">
+                        <input type="checkbox"
+                               name="inp">C#</input></label>
+                    <label for="inp-4">
+                        <input type="checkbox"
+                               name="inp">Java</input></label>
+                    <label for="inp-5">
+                        <input type="checkbox"
+                               name="inp">Python</input></label>
+                    <label for="inp-6">
+                        <input type="checkbox"
+                               name="inp">JavaScript</input></label>
+                    <label for="inp-7">
+                        <input type="checkbox"
+                               name="inp">React</input></label>
+                    <label for="inp-7">
+                        <input type="checkbox"
+                               name="inp">Angular</input></label>
+                    <label for="inp-7">
+                        <input type="checkbox"
+                               name="inp">Django</input></label>
+                    <label for="inp-7">
+                        <input type="checkbox"
+                               name="inp">Spring</input></label>
+                </div>
+          
+                <div class="form-control">
+                    <label for="comment">
+                        Any comments or suggestions
+                    </label>
+                    <textarea name="comment" id="comment"
+                placeholder="Enter your comment here">
+              </textarea>
+                </div>
+                </fieldset>
+            
+            <p> <input type="submit" value=" Register" aria-controls="enter"></p>
+            </table>
+        </div>
+        <br><br>
+        <a href="html2.html">Sign In/SignUp</a>
+        <a href="ForgetPassword.html">Forget Password</a>
+        <a float="left" href="html.html" class="home">Home/Survey</a>
+        <br><br>
+    </form>
+
+    <footer>
+        <a href="#">FAQ</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Terms and Conditions</a>
+        <a href="#">Privacy Policy </a>
+        <a href="#">&copy;2021 | WEB development</a>
+        <a href="#"></a>
+    </footer>
+</body>
+
+</html>

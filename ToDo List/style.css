@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    font-family: 'Baloo Bhai 2', cursive;
+}
+header::before{
+    content: "";
+    background-image: linear-gradient(to left,rgb(191, 191, 220),rgb(153, 193, 105));
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.8;
+}
+header{
+    background-color:rgb(198, 144, 248);
+    height: 2.2 rem;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid black; */
+}
+header h1{
+    color:red;
+    /* padding: 5px 0px 25px 0px; */
+    /* margin-bottom: 25px; */
+    font-size: 3rem;
+    font-weight: 1000;
+}
+#add-new-task{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+#new-task{
+    width: 600px;
+    height: 30px;
+    border-radius: 15px;
+    background-color:rgb(206, 206, 206);
+    padding: 20px;
+    padding-left: 30px;
+    color:white;
+    font-size: 1.15rem;
+    margin-top: 80px;
+    margin-right: 35px;
+}
+#new-task::placeholder{
+    color:rgb(130, 130, 130);
+}
+input, button{
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+}
+#new-task-submit{
+    color:pink;
+    font-weight: 700;
+    font-size: 1.8rem;
+    background-image: linear-gradient(to right,orangered,blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#new-task-submit:hover{
+    opacity: 0.7;
+}
+#new-task-submit:active{
+    opacity: 0.6;
+}
+#display-task{
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+    justify-content: center;
+    /* border: 2px solid black; */
+}
+#display-task h2{
+    font-size: 2rem;
+    color: rgb(46, 141, 64);
+    font-weight:bolder;
+}
+
+.task-list{
+    display: flex;
+    /* justify-content: space-between; */
+    background-color:rgb(255, 255, 255);
+    border-radius: 10px;
+    padding:9px 1rem ;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.task-text{
+    color: black;
+    font-size: 1.15rem;
+    font-weight: bold;
+    padding: 2px;
+    width: 100%;
+    display: block;
+}
+.task-text:not(:read-only){
+    color:rgb(171, 70, 70);
+}
+.button{
+    color:pink;
+    margin: 0px 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    background-image: linear-gradient(to right,red,orange);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+}
+.line{
+    font-weight: bolder;
+    color:darkblue;
+    font-size: 18px;
+}
+

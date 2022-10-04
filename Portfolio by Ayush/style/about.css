@@ -1,0 +1,116 @@
+.container{
+    width: 100%;
+    text-align: center;
+    margin-left: auto;
+    position: relative;    
+}
+
+h1,h2,h3,p{
+    font-family: 'Roboto Mono', monospace;
+}
+
+.section-style{
+    background-image: -webkit-linear-gradient(135deg, #43B7B8, #436AAC, #8929AD);
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom:10px;
+    border-top: 0;
+    color: #fff;
+}
+
+.section-title{
+    font-size: 30px;
+    padding-top: 40px;
+    margin-bottom: 10px;
+}
+
+.description{
+    font-size: 20px;
+    padding-bottom: 15px;
+    margin-right: 15%;
+    margin-left: 15%;
+}
+
+/*
+===================
+View CV Button
+===================
+*/
+
+* {
+	box-sizing: inherit;
+  	transition-property: all;
+  	transition-duration: .6s;
+  	transition-timing-function: ease;
+}
+
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.container-btn { 
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em;
+    text-align: center; 
+}
+
+.btn-cv {
+  	color: #fff;
+  	cursor: pointer;
+  	display: block;
+  	font-size:16px;
+  	font-weight: 400;
+  	line-height: 45px;
+  	margin: 0 0 2em;
+  	max-width: 160px; 
+  	position: relative;
+  	text-decoration: none;
+  	text-transform: uppercase;
+  	width: 100%; 
+}
+.btn-cv:hover { 
+	text-decoration: none; 
+}
+
+.btn-1 {
+  	background: darken(#000, 1.5%);
+  	font-weight: 100;
+}
+
+.btn-1 svg{
+    height: 45px;
+    left: 0;
+    position: absolute;
+    top: 0; 
+    width: 100%; 
+}
+
+.btn-1 rect {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-dasharray: 422, 0;
+    transition: all 0.35s linear;
+}
+
+.btn-1:hover {
+  	background: rgba(0, 0, 0, 0);
+  	font-weight: 900;
+  	letter-spacing: 1px; 
+}
+
+.btn-1:hover rect {
+    stroke-width: 5;
+    stroke-dasharray: 15, 310;
+    stroke-dashoffset: 48;
+    transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+}

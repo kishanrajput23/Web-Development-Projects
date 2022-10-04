@@ -1,0 +1,28 @@
+//js code
+<nav class="navbar">
+    <div class="toggle-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <img src="img/logo.PNG" class="logo" alt="">
+    <div class="search-box">
+        <input type="text" class="search-bar" placeholder="search">
+        <button class="search-btn"><img src="img/search.PNG" alt=""></button>
+    </div>
+    <div class="user-options">
+        <img src="img/video.PNG" class="icon" alt="">
+        <img src="img/grid.PNG" class="icon" alt="">
+        <img src="img/bell.PNG" class="icon" alt="">
+        <div class="user-dp">
+            <img src="img/profile-pic.png" alt="">
+        </div>
+    </div>
+</nav>
+
+//css
+
+*{ margin: 0; padding: 0; box-sizing: border-box; } *:focus{ outline: none; } body{ position: relative; background: #f0f0f0; font-family: 'roboto', sans-serif; } .navbar{ position: fixed; top: 0; left: 0; width: 100%; height: 60px; background: #fff; display: flex; align-items: center; padding: 0 2.5vw; } .toggle-btn{ width: 20px; height: 10px; position: relative; cursor: pointer; } .toggle-btn span{ position: absolute; width: 100%; height: 2px; top: 50%; transform: translateY(-50%); background: #979797; } .toggle-btn span:nth-child(1){ top: 0; } .toggle-btn span:nth-child(3){ top: 100%; } .logo{ height: 30px; margin: -10px 30px 0; } .search-box{ position: relative; max-width: 500px; width: 50%; height: 35px; display: flex; } .search-bar{ width: 85%; height: 100%; border: 2px solid #dbdbdb; padding: 0 20px; font-size: 16px; text-transform: capitalize; } .search-btn{ width: 15%; height: 100%; background: #f0f0f0; border: 2px solid #dbdbdb; padding: 5px 0; border-left: none; }
+
+.user-options .icon{ height: 80%; margin-right: 20px; cursor: pointer; } .user-dp{ cursor: pointer; height: 30px; width: 30px; border-radius: 50%; overflow: hidden; } .user-dp img{ width: 100%; height: 100%; object-fit: cover; }
+

@@ -1,0 +1,40 @@
+<%- include('partials/header') -%>
+<div class="jumbotron text-center">
+    <div class="container">
+        <h1 class="display-3">Login Form</h1>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <form action="/login" class="form" method="POST">
+                <div class="form-group">
+                    <label for="username" class="form-label">Username</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="fa fa-user"></i></div>
+                        </div>
+                        <input type="text" class="form-control" name="username" id="username" placeholder="username"
+                            required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="fa fa-key"></i></div>
+                        </div>
+                        <input type="password" class="form-control" name="password" id="password" placeholder="password"
+                            required />
+                    </div>
+                </div>
+                <div class="form-group text-center">
+                    <input type="submit" class="btn btn-primary form-control" value="Login" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') -%>

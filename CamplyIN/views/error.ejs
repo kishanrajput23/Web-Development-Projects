@@ -1,0 +1,17 @@
+<%- layout('layouts/boilerplate.ejs') %>
+
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="alert alert-danger" role="alert">
+                <h4 class="alert-heading">
+                    <%= err.message %>
+                </h4>
+                <p>Error Status Code: <%= err.status %>
+                </p>
+                <hr>
+                <p class="mb-0">
+                    <%= err.stack %>
+                </p>
+            </div>
+        </div>
+    </div>

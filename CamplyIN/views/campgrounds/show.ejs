@@ -1,0 +1,157 @@
+<%- layout('layouts/boilerplate') %>
+
+    <link rel="stylesheet" href="/styles/starability.css">
+
+    <section class="container row mx-auto">
+        <div class="col-lg-6">
+            <div class="card mb-5">
+
+                <div id="camp-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel"
+                    data-bs-interval="4000">
+                    <div class="carousel-inner">
+                        <% if (!camp.images.length) { %>
+                            <div class="carousel-item active">
+                                <img src="https://images.unsplash.com/photo-1468245856972-a0333f3f8293?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                    class="d-block w-100" alt="">
+                            </div>
+                            <% } else { %>
+                                <% for (let i=0; i < camp.images.length; i++) { %>
+                                    <div class="carousel-item <%= (i === 0) ? 'active' : '' %>">
+                                        <img src="<%= camp.images[i].url %>" class="d-block w-100" alt="">
+                                    </div>
+                                    <% } %>
+                                        <% } %>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#camp-carousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#camp-carousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
+                <div class="card-body">
+                    <h1 class="card-title">
+                        <%= camp.name %>
+                    </h1>
+                    <p class="card-text text-success">&#36;<%= camp.price %>/night</p>
+                </div>
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <%= camp.location %>
+                    </li>
+                    <li class="list-group-item">
+                        <%= camp.description %>
+                    </li>
+                </ul>
+
+                <% if (currentUser && camp.author.equals(currentUser._id)) { %>
+                    <div class="card-body">
+                        <a class="btn btn-success" href="/campgrounds/<%= camp.id %>/edit">Edit</a>
+                        <form class="d-inline" action="/campgrounds/<%= camp._id %>?_method=DELETE" method="POST">
+                            <button id="delete-btn" class="btn btn-danger">Delete</button>
+                        </form>
+                    </div>
+                    <% } %>
+
+                        <ul class="list-group d-flex flex-row">
+                            <li class="list-group-item text-muted border-0">
+                                By: <%= camp.author.capitalized %>
+                            </li>
+                            <li class="list-group-item text-muted flex-grow-1 border-bottom-0 border-right-0">
+                                <%= camp.lastUpdatedString %>
+                            </li>
+                        </ul>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div id="map"></div>
+
+
+            <h4 class="mt-5">Leave a Review</h4>
+
+            <form action="/campgrounds/<%= camp._id %>/reviews" method="POST" class="mb-5 validate-form" novalidate>
+                <div>
+                    <fieldset class="starability-growRotate">
+                        <input type="radio" id="first-rate1" name="review[rating]" value="1" checked />
+                        <label for="first-rate1" title="Terrible">1 star</label>
+                        <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+                        <label for="first-rate2" title="Not good">2 stars</label>
+                        <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+                        <label for="first-rate3" title="Average">3 stars</label>
+                        <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+                        <label for="first-rate4" title="Very good">4 stars</label>
+                        <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+                        <label for="first-rate5" title="Amazing">5 stars</label>
+                    </fieldset>
+                </div>
+
+                <% if (currentUser) { %>
+                    <div class="mb-3">
+                        <textarea name="review[body]" id="body" cols="30" rows="3" class="form-control"
+                            placeholder="Enter your review here..." required></textarea>
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">
+                            Please enter your review for <% camp.name %>.
+                        </div>
+                    </div>
+                    <button class="btn btn-success async-btn">Submit Review</button>
+                    <% } else { %>
+                        <div class="mb-3 text-muted">
+                            <small>
+                                Please <a href="/login" target="_blank">Log in</a> or
+                                <a href="/register" target="_blank">Sign up</a>
+                                to leave a review for this campground.
+                            </small>
+                        </div>
+                        <% } %>
+
+            </form>
+
+            <% if (camp.reviews.length) { %>
+                <h3 class="pt-4 pb-2">Reviews</h3>
+                <% } %>
+
+                    <!-- showing all reviews  -->
+                    <% for (let review of camp.reviews) { %>
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <p class="starability-result" data-rating="<%= review.rating %>">
+                                        Rated: <%= review.rating %> stars
+                                    </p>
+                                    <% if (currentUser && review.author.equals(currentUser._id)) { %>
+                                        <form
+                                            action="/campgrounds/<%= camp._id %>/reviews/<%= review._id %>?_method=DELETE"
+                                            method="POST">
+                                            <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                        </form>
+                                        <% } %>
+                                </div>
+                                <p class="card-text">
+                                    <b>&ldquo;</b>
+                                    <%= review.body %><b>&rdquo;</b>
+                                </p>
+                                <p class="card-text text-success text-end">
+                                    &mdash; <%= review.author.capitalized %>
+                                        <span class="text-muted"> &vert; <%= review.lastUpdatedString %> </span>
+                                </p>
+                            </div>
+                        </div>
+                        <% } %>
+        </div>
+    </section>
+
+    <script>
+        // public mapbox token
+        const mbxToken = '<%-process.env.MAPBOX_TOKEN%>';
+        const campground = <%- JSON.stringify(camp) %> ;
+    </script>
+
+    <script src="/scripts/showMap.js"></script>

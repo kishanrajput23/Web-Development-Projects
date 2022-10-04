@@ -1,0 +1,119 @@
+<%- layout('layouts/boilerplate') %>
+
+    <% if (currentPage===1) { %>
+        <div id="cluster-map-space"></div>
+        <div id="cluster-map"></div>
+        <% } %>
+
+            <div class="text-center">
+                <h1>All Campgrounds</h1>
+                <p>
+                    <% if (currentPage !=1) { %>
+                        <a href="/campgrounds?page=1">Go to Map</a> |
+                        <% } %>
+                            <a href="/campgrounds/new">Add a New Campground</a>
+                </p>
+            </div>
+
+            <!-- Bootstrap5 Pagination  -->
+            <nav aria-label="Page navigation" class="my-5">
+                <ul class="pagination justify-content-center">
+
+                    <li class="page-item <%= (currentPage === 1) ? 'disabled' : '' %>">
+                        <a class="page-link" href="/campgrounds?page=<%= currentPage - 1 %>" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+
+                    <% for (let i=1; i <=totalPages; i++) { %>
+                        <% if (i===currentPage) { %>
+                            <li class="page-item active"><a class="page-link" href="#">
+                                    <%= i %>
+                                </a></li>
+                            <% } else { %>
+                                <li class="page-item"><a class="page-link" href="/campgrounds?page=<%= i %>">
+                                        <%= i %>
+                                    </a></li>
+                                <% }} %>
+
+                                    <li class="page-item <%= (currentPage >= totalPages) ? 'disabled' : '' %> ">
+                                        <a class="page-link" href="/campgrounds?page=<%= currentPage + 1 %>"
+                                            aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                </ul>
+            </nav>
+
+            <section class="row d-flex justify-content-center">
+
+                <% for (let camp of campgrounds.slice(start, end) ) { %>
+                    <div class="card camp-card g-0">
+                        <div class="row g-0">
+                            <div class="col-md-6 card-img-left camp-image"
+                                style="background-image: 
+              url('<%= camp.images[0] ? camp.images[0].url : `https://images.unsplash.com/photo-1468245856972-a0333f3f8293?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80` %>');">
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <a href="/campgrounds/<%= camp._id %>">
+                                            <%= camp.name %>
+                                        </a>
+
+                                    </h5>
+                                    <p class="card-text">
+                                        <small>
+                                            <%= camp.description.substring(0, 150) %>...
+                                        </small>
+                                    </p>
+                                    <p class="card-text text-muted">
+                                        <%= camp.location %>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+
+            </section>
+
+
+            <!-- Bootstrap5 Pagination  -->
+            <nav aria-label="Page navigation" class="my-5">
+                <ul class="pagination justify-content-center">
+
+                    <li class="page-item <%= (currentPage === 1) ? 'disabled' : '' %>">
+                        <a class="page-link" href="/campgrounds?page=<%= currentPage - 1 %>" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+
+                    <% for (let i=1; i <=totalPages; i++) { %>
+                        <% if (i===currentPage) { %>
+                            <li class="page-item active"><a class="page-link" href="#">
+                                    <%= i %>
+                                </a></li>
+                            <% } else { %>
+                                <li class="page-item"><a class="page-link" href="/campgrounds?page=<%= i %>">
+                                        <%= i %>
+                                    </a></li>
+                                <% }} %>
+
+                                    <li class="page-item <%= (currentPage >= totalPages) ? 'disabled' : '' %> ">
+                                        <a class="page-link" href="/campgrounds?page=<%= currentPage + 1 %>"
+                                            aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                </ul>
+            </nav>
+
+            <script>
+                // public mapbox token
+                const mbxToken = '<%-process.env.MAPBOX_TOKEN%>';
+                const campgrounds = { features: <%- JSON.stringify(campgrounds) %> };
+            </script>
+
+            <script src="/scripts/clusterMap.js"></script>

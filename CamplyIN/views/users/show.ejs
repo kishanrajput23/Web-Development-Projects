@@ -1,0 +1,111 @@
+<%- include('../partials/header') -%>
+
+<div class="container-fluid p-0 m-0" id="profile-container">
+    <div class="profile">
+        <img class="cover" src="/images/placeholder_images/cover.jpg" alt="<%= user.username %>" />
+        <div class="profile-circle">
+            <img class="img-fluid avatar" src="<%= user.avatar %>" alt="<%= user.username %>" />
+        </div>
+        <div class="name">
+            <%= user.firstname + " " + user.lastname %>
+            <% if(currentUser && currentUser._id.equals(user._id)){ %>
+            <form action="/users/<%= user._id %>/edit" class="d-inline" method="GET">
+                <button type="submit" class="btn primary effect px-0">
+                    <i class="fa fa-pencil px-0"></i>
+                </button>
+            </form>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <h1 class="text-center capital mt-4 mb-3"><%= user.firstname %>'s campgrounds</h1>
+        <div class="col-lg-8 mb-5 d-none d-md-block blur">
+            <% if(campgrounds.length === 0) { %>
+            <img src="/images/placeholder_images/thinking-man.svg" alt="thinking-man"
+                class="img-fluid placeholder_images" />
+            <% } %>
+            <ul class="list-unstyled">
+                <% campgrounds.forEach(campground => { %>
+                <li class="media">
+                    <a href="/campgrounds/<%= campground._id %>">
+                        <img class="img-fluid align-self-center rounded" src="<%= campground.image.url %>" width="250"
+                            alt="<%= campground.name %>">
+                    </a>
+                    <div class="media-body">
+                        <div class="media-header">
+                            <h4><a href="/campgrounds/<%= campground._id%>"> <%= campground.name%></a></h4>
+                        </div>
+                        <div>
+                            <div class="px-0 mx-0 pb-3"><%= campground.description.substring(0,100) %>...</div>
+                            <span><a href="/campgrounds/<%= campground._id%>"
+                                    class="btn btn-primary btn-sm py-1 px-2">View</a>
+                            </span>
+                            <span class="float-right">
+                                <% if(currentUser && campground.author.id.equals(currentUser._id)) { %>
+                                <a href="/campgrounds/<%= campground._id %>/edit"
+                                    class="btn primary effect btn-lg px-0">
+                                    <i class="fa fa-pencil"></i>
+                                </a>
+                                <form class="d-inline" action="/campgrounds/<%= campground._id %>?_method=DELETE"
+                                    method="POST">
+                                    <button type="submit" class="btn danger effect btn-lg">
+                                        <i class="fa fa-trash-o"></i>
+                                    </button>
+                                </form>
+                                <% } %>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+                <% }) %>
+            </ul>
+        </div>
+        <div class="col-sm-11 mb-5 d-md-none blur">
+            <ul class="list-unstyled">
+                <% if(campgrounds.length === 0) { %>
+                <img src="/images/placeholder_images/thinking-man.svg" alt="thinking-man"
+                    class="img-fluid placeholder_images" />
+                <% } %>
+                <% campgrounds.forEach(campground => { %>
+                <li class="stack">
+                    <div class="px-3">
+                        <a href="/campgrounds/<%= campground._id %>">
+                            <img class="img-fluid align-self-center" src="<%= campground.image.url %>"
+                                alt="<%= campground.name %>" />
+                        </a>
+                        <div class="stack-body">
+                            <div class="stack-header pt-3">
+                                <h4><a href="/campgrounds/<%= campground._id%>"> <%= campground.name%></a></h4>
+                            </div>
+                            <div>
+                                <div class="px-0 mx-0 pb-3"><%= campground.description.substring(0,100) %>...</div>
+                                <span><a href="/campgrounds/<%= campground._id%>"
+                                        class="btn btn-primary py-1 px-3">View</a></span>
+                                <span class="float-right">
+                                    <% if(currentUser && campground.author.id.equals(currentUser._id)) { %>
+                                    <a href="/campgrounds/<%= campground._id %>/edit"
+                                        class="btn primary effect btn-lg px-0">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <form class="d-inline" action="/campgrounds/<%= campground._id %>?_method=DELETE"
+                                        method="POST">
+                                        <button type="submit" class="btn danger effect btn-lg">
+                                            <i class="fa fa-trash-o"></i>
+                                        </button>
+                                    </form>
+                                    <% } %>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <% }) %>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') -%>

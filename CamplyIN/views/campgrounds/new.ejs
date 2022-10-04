@@ -1,0 +1,70 @@
+<% layout('layouts/boilerplate')%>
+
+    <h1>Add a New Campground</h1>
+
+    <form action="/campgrounds" method="POST" class="row my-3 validate-form" enctype="multipart/form-data" novalidate>
+
+        <div class="col-lg-10 mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+                Please enter the campground's name.
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-5 mb-3">
+            <label for="location" class="form-label">Location:</label>
+            <input type="text" class="form-control" id="location" name="location" required
+                placeholder="Location">
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+                Please enter a campground location.
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-5 mb-3">
+            <label for="price" class="form-label">Price:</label>
+            <div class="input-group has-validation">
+                <span class="input-group-text" id="inputGroupPrepend">&#36;</span>
+                <input type="text" class="form-control" id="price" name="price" aria-describedby="inputGroupPrepend"
+                    required>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">
+                    Please enter the campground's price in numbers.
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-10 mb-3">
+            <label for="description" class="form-label">Description:</label>
+            <textarea class="form-control" name="description" id="description" rows="3" required></textarea>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+                Please enter a description for this campground.
+            </div>
+        </div>
+
+        <div class="col-lg-10 mb-3">
+            <div class="custom-file">
+                <label for="new-camp-images" class="form-label">
+                    Upload Image(s):
+                </label>
+                <input class="form-control" type="file" name="image" id="new-camp-images" multiple required>
+                <p class="custom-file-label">Maximum of 3 photos.</p>
+            </div>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+                Please enter the campground's image URL.
+            </div>
+        </div>
+
+        <div class="col-md-10 mb-3">
+            <button class="btn btn-success adds-images" type="submit">
+                Add Campground
+            </button>
+        </div>
+    </form>
+
+    <p>
+        <a href="/campgrounds">Back to All Campgrounds</a>
+    </p>

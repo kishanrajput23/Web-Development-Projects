@@ -1,0 +1,50 @@
+<% layout('layouts/boilerplate') %>
+    <section class="vh-90" style="background-color: #bec5bf;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-xl-10">
+                    <div class="card" style="border-radius: 1rem;">
+                        <div class="row g-0">
+                            <div class="col-md-6 col-lg-5 d-none d-md-block">
+                                <img src="/Img/login.jpg"
+                                    class="img-fluid" alt="..." style="border-radius: 1rem 0 0 1rem;">
+                            </div>
+                            <div class="col-md-6 col-lg-7 d-flex align-items-center card-body">
+                                <div class="card-body p-4 p-lg-5 text-black card-text">
+                                    <form action="/login" method="POST" class="validate-form" novalidate>
+                                        <div class="d-flex align-items-center mb-3 pb-1">
+                                            <h1 class="h1 fw-bold mb-0">Camply</h1>
+                                        </div>
+                                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your
+                                            account</h5>
+                                        <div class="form-outline mb-4">
+                                            <label for="username" class="form-label">Username</label>
+                                            <input type="text" class="form-control" id="username" name="username"
+                                                required>
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <label for="password" class="form-label">Password</label>
+                                            <input type="password" name="password" id="password" class="form-control"
+                                                required>
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>
+                                        </div>
+                                        <div class="pt-1 mb-4">
+                                            <button
+                                                class="btn btn-dark btn-lg btn-success async-btn btn-block">Log-in</button>
+                                        </div>
+                                        <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/register"
+                                                class="link-danger">Register</a></p>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

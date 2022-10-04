@@ -1,0 +1,97 @@
+<%- include('partials/header') -%>
+<div class="jumbotron">
+    <div class="container text-center">
+        <h1 class="display-3">Sign Up !!</h1>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <form action="/register" class="form" method="POST">
+                <div class="form-group">
+                    <label for="username" class="form-label">Username</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="fa fa-user"></i></div>
+                        </div>
+                        <input type="text" class="form-control" name="username" id="username" placeholder="username"
+                            required />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="firstname" class="form-label">Firstname</label>
+                        <input type="text" class="form-control" name="firstname" id="firstname" placeholder="firstname"
+                            required />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="lastname" class="form-label">Lastname</label>
+                        <input type="text" class="form-control" name="lastname" id="lastname" placeholder="lastname"
+                            required />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="gender" class="form-label">Sex</label>
+                        <select name="user[gender]" id="gender" class="form-control" required>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="dob" class="form-label">Date of Birth</label>
+                        <input type="date" class="form-control" name="dob" id="dob" placeholder="dob" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="fa fa-envelope"></i></div>
+                        </div>
+                        <input type="email" class="form-control" name="email" id="email"
+                            placeholder="example.@example.com" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address" class="form-label">Address</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="fa fa-address-card"></i></div>
+                        </div>
+                        <input type="string" class="form-control" name="address" id="address" placeholder="Address"
+                            required />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="state" class="form-label">State</label>
+                        <input type="text" class="form-control" name="state" id="state" placeholder="state" required />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="country" class="form-label">Country</label>
+                        <input type="string" class="form-control" name="country" id="country" placeholder="country"
+                            required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="fa fa-key"></i></div>
+                        </div>
+                        <input type="password" class="form-control" name="password" id="password" placeholder="password"
+                            required />
+                    </div>
+                </div>
+                <div class="form-group text-center">
+                    <input type="submit" class="btn btn-primary form-control" value="Sign Up" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') -%>

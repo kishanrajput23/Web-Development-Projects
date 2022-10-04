@@ -1,0 +1,89 @@
+<% layout('layouts/boilerplate')%>
+
+    <h1>Edit Campground</h1>
+
+    <form action="/campgrounds/<%= camp.id %>?_method=PUT" method="POST" class="row my-3 validate-form"
+        enctype="multipart/form-data" novalidate>
+
+        <div class="col-lg-10 mb-3 custom-file">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" value="<%= camp.name %>" required
+                placeholder="Location in the Philippines">
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+                Please enter the campground's name.
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-5 mb-3">
+            <label for="location" class="form-label">Location:</label>
+            <input type="text" class="form-control" id="location" name="location" value="<%= camp.location %>" required>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+                Please enter a campground location in the Philippines.
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-5 mb-3">
+            <label for="price" class="form-label">Price:</label>
+            <div class="input-group has-validation">
+                <span class="input-group-text" id="inputGroupPrepend">&#8369;</span>
+                <input type="number" class="form-control" id="price" name="price" value="<%= camp.price %>"
+                    aria-describedby="inputGroupPrepend" required>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">
+                    Please enter the campground's price in numbers.
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-10 mb-3">
+            <label for="description" class="form-label">Description:</label>
+            <textarea class="form-control" name="description" id="description" rows="8"
+                required><%= camp.description %></textarea>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+                Please enter a description for this campground.
+            </div>
+        </div>
+
+        <% if (camp.images.length < 3) { %>
+            <div class="col-lg-10 mb-3">
+                <div class="custom-file">
+                    <label for="image" class="form-label">
+                        Add Image(s):
+                    </label>
+                    <input class="form-control" type="file" name="image" id="new-camp-images" multiple>
+                    <p class="custom-file-label">Maximum of 3 photos</p>
+                </div>
+            </div>
+            <% } %>
+
+                <div class="col-lg-10 mb-3">
+                    <label for="">Select the image(s) you want to delete:</label>
+                    <div class="delete-box">
+
+                        <% camp.images.forEach( (img, i)=> { %>
+                            <div class="delete-item form-check">
+                                <label for="image-<%= i %>" class="form-check-label">
+                                    <img src="<%= img.thumbnail %>" class="img-thumb" alt="<%= img.filename %>">
+                                </label>
+                                <input type="checkbox" class="form-check-input" name="deleteImages[]"
+                                    value="<%= img.filename %>" id="image-<%= i %>">
+                            </div>
+                            <% }) %>
+
+                    </div>
+                </div>
+
+                <div class="col-md-10 mb-3">
+                    <button class="btn btn-success adds-images" type="submit">
+                        Save Changes
+                    </button>
+                </div>
+    </form>
+
+    <p>
+        <a href="/campgrounds/<%= camp.id %>">Back To Campground</a>
+    </p>
+
+    <script type="text/javascript" src="/scripts/editScript.js"></script>

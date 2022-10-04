@@ -1,0 +1,399 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    }
+
+      .dropdown {
+        float: right;
+        position: relative;
+        display: inline-block;
+        padding-top: 1.8%;
+        margin-right: 14%;
+      }
+
+      /* dropdown cntent  */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        color: black;
+        /* min-width: 160px; */
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        right:-700%;
+        top: 0%;
+        z-index: 1;
+        width: 1500%;
+        height: 100vh;
+      }
+
+      .dropdown-content h3{
+        width: 1500%;
+      }
+
+      .mid,.bottom{
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight:lighter ;
+      }
+      .mid h3,.bottom h3{
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight:lighter ;
+      }
+      .dropdown h3{
+        margin: 20px 40px;
+      }
+
+      
+      .dropdown a:hover {background-color: #ddd;}
+      
+      .show {display: block;}
+
+      /* Header Background */
+      header{
+        background-image: url("./wallpapersden.com_los-angeles-at-night-pink-sky_7680x4320.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 70vh;
+      }
+
+      /* dropdown menu button */
+      .dropdown button{
+          padding-left: -10;
+          padding-right: -10;
+          background-color: #050506;
+          color: #A9A9A9;
+          width: 30px;
+          height: 30px;
+          border: none;
+          border-radius: 3px;
+      }
+
+      /* adujsting postion of nav bar */
+      nav .logo ,.dropdown{
+        display: inline-block;
+        position: relative;
+      }
+
+      .logo{
+        margin-left: 12%;
+        padding-top: 1.8%;
+      }
+
+      .search input {
+        border: none;
+        width: 55%;
+        height: 8vh;
+        margin-top: 10%;
+        /* margin-bottom: ; */
+        /* justify-content: center; */
+        border-bottom-right-radius: 4px;
+        border-top-right-radius: 4px;
+        
+
+      }
+
+      .search button{
+        margin-top: 10%;
+        float: left;
+        border: none;
+        height: 8vh;
+        background-color: white;
+        margin-left: 18%;
+        border-bottom-left-radius: 4px;
+        border-top-left-radius: 4px;
+      }
+
+      .bar{
+        background-color: hsl(317.65,22.08%,15.1%);
+        color: white;
+        width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3vh;
+        height: 6vh;
+        padding-top: 2vh;
+        border-radius: 4px;
+        text-align: center;
+      }
+
+      header{
+        border-bottom: orangered;
+      }
+
+      body{
+        background-color: #ebebeb;
+      }
+
+      .col1{
+        display:list-item;
+      }
+
+      .c1{
+        background-color: white;
+        margin-top: 8vh;
+        margin-left: 11%;
+        padding: 12px 15px;
+        margin-right: 0;
+       width: fit-content;
+      }
+      .c1 h2{
+        padding-bottom: 12px;
+      }
+
+      .news img,h3,p{
+        margin-top: 0;
+        display: inline-block;
+        
+      }
+
+      .newsData{
+        background-color: white;
+        width: 800px;
+        margin-left: 11%;
+        height: 20vh;
+
+      }
+      .newsData img{
+        float: left;
+      
+      }
+
+      .newsData h3{
+       margin-top: 20px;
+       margin-left: 20px;
+       color: orangered;
+       font-family:sans-serif;
+      }
+
+      .newsData h4{
+        margin-left: 200px;
+      }
+
+      .news{
+        margin-top: 5vh;
+      }
+      
+      #date{
+        margin-top: 50px;
+      }
+
+      .news h2{
+        margin-left: 11%;
+        margin-bottom: 1%;
+      }
+
+      /* blinking effect of red dot */
+      .blink {
+        animation: blink-animation 1.5s steps(10, start) infinite;
+        -webkit-animation: blink-animation 1.5s steps(10, start) infinite;
+      }
+      @keyframes blink-animation {
+        to {
+          visibility: hidden;
+        }
+      }
+      @-webkit-keyframes blink-animation {
+        to {
+          visibility: hidden;
+        }
+      }
+
+      .blog{
+        margin-left: 40%;
+        background-color: white;
+        width: 330px;
+        padding-left: 15px;
+        text-align: left;
+        padding-bottom: 15px;
+        margin-top: 8vh;
+      
+      }
+
+      .blog .top{
+        margin-top: -80px;
+        padding-top: 5vh;
+      }
+
+      .blog span{
+     
+        color: red;
+        font-size: 95px;
+        
+      }
+      .blog img{
+          width: 300px;
+          
+      }
+
+      .col1 , .col2{
+        position: relative;
+        display: inline-block;
+        float: left;
+      }
+
+      /* featured news */
+      .featuredNews{
+        margin-left: 40%;
+        background-color: white;
+        width: 330px;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-align: left;
+        padding-bottom: 15px;
+        margin-top: 8vh;
+      
+      }
+
+      .featuredNews .top{
+        margin-top: 0px;
+        padding-top: 3vh;
+        padding-bottom: 3vh;
+      }
+
+      .featuredNews h4{
+        padding-top: 3vh;
+        padding-bottom: 3vh;
+      }
+
+      /* footer */
+      footer{
+        margin-top: 200vh;
+        background-color: white;
+        text-align: left;
+      }
+
+
+      .topOfFooter{
+        background-color: whitesmoke;
+      }
+
+      .topOfFooter h4{
+        padding-top: 3vh;
+        padding-bottom: 3vh;
+        margin-left: 6%;
+      }
+
+      .topOfFooter span{
+        padding-right: 5px;
+        padding-left: 3px;
+      }
+
+
+
+      .footer {
+        display: flex;
+        flex-flow: row wrap;
+        padding: 50px;
+        color: #999;
+        }
+        
+        .footer > * {
+        flex:  1 100%;
+        }
+        
+        .l-footer {
+        margin-right: 1.25em;
+        margin-bottom: 2em;
+        }
+        
+        h2 {
+        font-weight: 200;
+        font-size: 15px;
+        width:200px ;
+        color: #999999;
+        }
+        
+        .footer ul {
+        list-style: none;
+        padding-left: 0;
+        }
+        
+        .footer li {
+        line-height: 2em;
+        }
+        
+        .footer a {
+        text-decoration: none;
+        }
+        
+        .r-footer {
+        display: flex;
+        flex-flow: row wrap;
+        }
+        
+        .r-footer > * {
+        flex: 1 50%;
+        margin-left: 10%;
+        padding-top: 5vh;
+        }
+        
+        .box a {
+        color: black;
+        }
+        
+        .h-box {
+        column-count: 2;
+        column-gap: 1.25em;
+        }
+        
+        .b-footer {
+        text-align: center;
+        color: #999;
+        padding-top: 50px;
+        }
+        
+        .l-footer p {
+        padding-right: 10%;
+        color: #999;
+        }   
+        
+        ul {
+          list-style: none;
+        }
+        @media screen and (min-width: 600px) {
+        .r-footer > * {
+        flex: 1;
+        }
+        
+        .features {
+        flex-grow: 2;
+        }
+        
+        .l-footer {
+        flex: 1 0px;
+        }
+        
+        .r-footer {
+        flex: 2 0px;
+        }
+    }
+
+    h2, li{
+      padding-bottom: 1.5vh;
+      font-weight: 50;
+    }
+    a:hover{
+      color: orangered;
+    }
+
+    .socal{
+      margin-top: 3vh;
+
+    }
+    .socal img{
+      padding-right: 8px;
+    }
+
+    .c{
+      padding-top: 4vh;
+      padding-bottom: 4vh;
+      text-align: center;
+    }
+    .c p{
+      padding-bottom: 3px;
+    }
+
+    
+        
+        

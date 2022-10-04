@@ -14,7 +14,7 @@ const Search = React.memo((props) => {
       const query =
         filter.length === 0 ? '' : `?orderBy="title"&equalTo="${filter}"`;
       fetch(
-        "https://upload-files-97fdd-default-rtdb.firebaseio.com//ingedrients.json" +
+        "firebase//ingedrients.json" +
           query
       )
         .then((response) => response.json())

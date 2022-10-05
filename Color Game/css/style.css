@@ -1,0 +1,75 @@
+
+/* Panda Life */
+
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+body {
+  background-color: bisque;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  font-size: larger;
+  text-transform: uppercase;
+}
+#topHead {
+  background-color: crimson;
+  text-shadow: 2px 1px 3px black;
+  box-shadow: inset 0px -10px 40px -10px #888;
+  transition: background-color 0.5s;
+}
+h1 {
+  font-size: 40px;
+}
+a, a:hover{
+  text-decoration: none;
+  color: white;
+}
+h2 {
+  font-size: 35px;
+}
+nav {
+  background-color: white;
+  box-shadow: 0px 1px 15px #888;
+}
+nav a {
+  color: midnightblue;
+  text-decoration: none;
+  padding: 5px;
+  margin: 2px;
+  border-radius: 7px;
+  box-shadow: 1px 1px 7px #888;
+}
+nav a:hover {
+  color: white;
+  background-color: midnightblue;
+}
+.active {
+  color: white;
+  background-color: midnightblue;
+  border-radius: 7px;
+}
+.divWidth {
+  max-width: 600px;
+}
+.box {
+  border-radius: 9%;
+  width: 0;
+  padding: 61px;
+  margin: 10px;
+  transition: background-color 0.5s;
+}
+#result {
+  text-shadow: 1px 1px 7px #888;
+}
+@media (min-width: 600px) {
+  .flex {
+    display: flex;
+    max-width: 600px;
+    justify-content: space-between;
+  }
+  h1{
+    font-size: 55px;
+  }
+  h2{
+    font-size: 45px;
+  }
+}

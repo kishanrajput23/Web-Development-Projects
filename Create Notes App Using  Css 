@@ -1,0 +1,68 @@
+body {
+  background-color: #ebfaff;
+}
+
+i {
+  margin-top: 25px;
+}
+
+.subject-card {
+  height: 200px;
+}
+
+.inner-subject-card {
+  padding-top: 15px;
+  margin: 10px 0;
+  background-color: #baffd2;
+  height: 180px;
+  border: 2px solid #BAFFF5;
+  box-shadow: 1px 1px 5px #888888;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.inner-subject-card:hover {
+  margin: 5px;
+  height: 190px;
+  background-color: #FFBAE7;
+  box-shadow: 5px 5px 18px #888888;
+  cursor: pointer;
+}
+
+.divider-custom {
+  margin: 1.25rem 0 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.divider-custom .divider-custom-line {
+  width: 100%;
+  max-width: 7rem;
+  height: 0.25rem;
+  background-color: black;
+  border-radius: 1rem;
+  border-color: black !important;
+}
+
+.divider-custom .divider-custom-line:first-child {
+  margin-right: 1rem;
+}
+
+.divider-custom .divider-custom-line:last-child {
+  margin-left: 1rem;
+}
+
+.divider-custom .divider-custom-icon {
+  color: black !important;
+  font-size: 2rem;
+}
+
+.divider-custom.divider-light .divider-custom-line {
+  background-color: #fff;
+}
+
+.divider-custom.divider-light .divider-custom-icon {
+  color: #fff !important;
+}

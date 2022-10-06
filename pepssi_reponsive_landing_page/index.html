@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Pepsi Website Landing Page</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <section class="sec">
+        <header>
+            <a href="#"><img src="./images/logo.png" class="logo"></a>
+            <div class="toggleMenu" onclick="menuToggle();"></div>
+            <ul class="navigation">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">What's New</a></li>
+                <li><a href="#">Newsletter</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2>That's What<br><span>I like</span></h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, architecto perspiciatis debitis autem repellendus eius nam expedita, aliquid distinctio molestiae temporibus, quidem voluptates rerum veniam saepe laboriosam vel quas asperiores.</p>
+                <a href="#">View All Products</a>
+            </div>
+            <div class="imgBox">
+                <img src="./images/pepsi001.png" class="pepsi">
+            </div>
+        </div>
+        <ul class="thumb">
+            <li><img src="./images/pepsi001.png" onclick="imgSlider('./images/pepsi001.png');changeBgColor('#0062be')"></li>
+            <li><img src="./images/pepsi002.png" onclick="imgSlider('./images/pepsi002.png');changeBgColor('#e60c2c')"></li>
+            <li><img src="./images/pepsi003.png" onclick="imgSlider('./images/pepsi003.png');changeBgColor('#1e1e1e')"></li>
+        </ul>
+        <ul class="sci">
+            <li><a href="https://www.facebook.com/profile.php?id=100076032804642"><img src="./images/facebook.png"></a></li>
+            <li><a href="https://twitter.com/Rimjhim92081450"><img src="./images/twitter.png"></a></li>
+            <li><a href="https://www.instagram.com/rimjhim_5/"><img src="./images/instagram.png"></a></li>
+        </ul>
+    </section>
+
+
+    <script src="index.js"></script>
+</body>
+</html>

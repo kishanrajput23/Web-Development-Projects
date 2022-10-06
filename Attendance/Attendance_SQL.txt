@@ -1,0 +1,80 @@
+create database attendance;
+use attendance;
+
+
+
+
+CREATE TABLE TeacherTable(
+  
+`TId` INT NOT NULL AUTO_INCREMENT,
+ 
+ `Name` VARCHAR(50) NOT NULL,
+ 
+ `Subject` VARCHAR(100) NOT NULL,
+ 
+  PRIMARY KEY (`TId`));
+
+
+
+CREATE TABLE ClassTable( 
+`Id` INT NOT NULL AUTO_INCREMENT,
+`ClassName` Varchar(100), 
+`Teacher` Varchar(100),  
+key (ClassName),
+ PRIMARY KEY (`Id`));
+
+
+
+
+CREATE TABLE `StudentTable` (
+  
+ `Id` INT NOT NULL AUTO_INCREMENT,
+ 
+ `Roll_Number` Int Not Null,
+ `Name` Varchar(100), 
+ `Gender` Varchar(100), 
+ `CName` Varchar(100), 
+  PRIMARY KEY (`Id`),
+INDEX cNAME_ind (CName),
+  CONSTRAINT fk_ClassTable FOREIGN KEY (CName)
+  	REFERENCES ClassTable (ClassName)
+		ON DELETE CASCADE
+  		ON UPDATE CASCADE
+) ENGINE=INNODB;
+
+
+CREATE TABLE AttendanceTable( 
+`Id` INT NOT NULL AUTO_INCREMENT,
+`Date` Date, 
+`ClassName` Varchar(100), 
+`TeacherId` Varchar(100),  
+`TotalStrength` Int, 
+`TotalPresent` Int, 
+ PRIMARY KEY (`Id`));
+
+
+
+CREATE TABLE `ARecordTable` (
+  
+ `AId` INT,
+
+ `Date` Date, 
+ `StudentName` Varchar(100), 
+ `Present` TinyInt, 
+ `RollNumber` Int, 
+`ClassName` Varchar(100), 
+ INDEX arecrd_Index (AId),
+  CONSTRAINT fk_AttendanceTable FOREIGN KEY (AId)
+  	REFERENCES AttendanceTable (Id)
+		ON DELETE CASCADE
+  		ON UPDATE CASCADE
+) ENGINE=INNODB;
+
+
+// truncate table which has foreign key contraints.
+
+SET FOREIGN_KEY_CHECKS = 0;
+truncate tableName;
+SET FOREIGN_KEY_CHECKS = 1;
+
+// done.

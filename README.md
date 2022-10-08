@@ -1,4 +1,6 @@
-# This repository is no longer accepting new PR's. Please don't contribute.
+# Please do not contribute in this repository as it has been excluded from Hacktoberfest 2022
+
+![image](https://user-images.githubusercontent.com/70385488/194719517-d911bb01-2460-4ede-b172-ea9accf6926a.png)
 
 # Web-Development-Projects
 

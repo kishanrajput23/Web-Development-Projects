@@ -222,4 +222,18 @@
   .fa-youtube:hover {
     color: rgba(202, 17, 0, 0.904);
   }
-  
+   .new{
+    text-align: center;
+    /* padding-left: 20%; */
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 56px;
+    letter-spacing: 0px;
+    margin-top: 20%;
+    word-spacing: 2.6px;
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none solid rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+   }

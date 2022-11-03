@@ -8,11 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
     <marquee behavior="" direction="">
-
-        <center>
+            <center>
             <h1 id="text">Azadi ka Amrit Mahotsav 75th </h1>
             <h2 id="text1">Anniversary of Indian Independence </h2>
             <h3 id="text2">Happy Independence Day 2022</h3>
@@ -26,10 +24,10 @@
         </center>
     </marquee>
 </body>
-
 </html>
 
 //css code
+
 #div1
 {
     border: solid orange;

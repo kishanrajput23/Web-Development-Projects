@@ -1,7 +1,3 @@
-# Please do not contribute in this repository as it has been excluded from Hacktoberfest 2022
-
-![image](https://user-images.githubusercontent.com/70385488/194719517-d911bb01-2460-4ede-b172-ea9accf6926a.png)
-
 # Web-Development-Projects
 
 ![image](https://user-images.githubusercontent.com/70385488/192114009-0830321a-d227-4a4d-8411-6c03b54d7ce6.png)

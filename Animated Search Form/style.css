@@ -1,40 +1,40 @@
 body {
   padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 * {
   box-sizing: border-box;
 }
 
+.container {
+  display: flex;
+}
+
 input[type=text] {
   height: 40px;
   width: 40px;
   border-radius: 40px;
-  padding: 0px 10px;
-
+  padding: 0 10px;
   border: 1px solid #ccc;
-
-  margin: 0;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
+  font-size: 14px;
   transition: all 0.5s ease;
 }
 
-.active, input[type=text]:active, input[type=text]:focus-visible {
-  width: 200px!important;
-  border: 2px solid #ccc !important;
+.active,
+input[type=text]:focus-visible {
+  width: 200px !important;
+  border: 2px solid #888 !important;
 }
 
 form {
   position: relative;
   display: flex;
 }
+
 button {
   height: 40px;
   width: 40px;
@@ -42,19 +42,24 @@ button {
   position: absolute;
   top: 0;
   right: 0;
-
   border: 1px solid #ccc;
-
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  background: #ccc;
+  background: #ddd;
 }
+
 button:focus {
-  border: 2px solid #ccc;
+  outline: none;
+  border: 2px solid #888;
+}
+
+/* responsive improvement */
+@media (max-width: 480px) {
+  .active {
+    width: 150px !important;
+  }
 }

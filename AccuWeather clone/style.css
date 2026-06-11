@@ -59,15 +59,15 @@
 
       /* dropdown menu button */
       .dropdown button{
-          padding-left: -10;
-          padding-right: -10;
-          background-color: #050506;
-          color: #A9A9A9;
-          width: 30px;
-          height: 30px;
-          border: none;
-          border-radius: 3px;
-      }
+         padding-left: 0;
+         padding-right: 0;
+         background-color: #050506;
+         color: #A9A9A9;
+         width: 30px;
+         height: 30px;
+         border: none;
+         border-radius: 3px;
+       }
 
       /* adujsting postion of nav bar */
       nav .logo ,.dropdown{
@@ -118,7 +118,7 @@
       }
 
       header{
-        border-bottom: orangered;
+        border-bottom: 1px solid orangered;
       }
 
       body{
@@ -141,10 +141,11 @@
         padding-bottom: 12px;
       }
 
-      .news img,h3,p{
-        margin-top: 0;
-        display: inline-block;
-        
+      .news img,
+      .news h3,
+      .news p{
+         margin-top: 0;
+         display: inline-block;
       }
 
       .newsData{

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <div>
+            <h1><i class="fa-solid fa-sparkles"></i> Task Manager</h1>
+            <p>Organize your day with intelligent task management</p>
+        </div>
+
+        <button class="new-task-btn" onclick="openTaskModal()">
+            + New Task
+        </button>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <div class="stat-top">
+                <span>Total Tasks</span>
+                <i class="fa-regular fa-clock"></i>
+            </div>
+
+            <h2 id="totalTasks">0</h2>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-top">
+                <span>Completed</span>
+                <i class="fa-regular fa-circle-check"></i>
+            </div>
+
+            <h2 id="completedTasks">0</h2>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-top">
+                <span>In Progress</span>
+                <i class="fa-solid fa-chart-line"></i>
+            </div>
+
+            <h2 id="pendingTasks">0</h2>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-top">
+                <span>Completion Rate</span>
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+
+            <h2 id="completionRate">0%</h2>
+        </div>
+
+    </div>
+
+    <!-- Filters -->
+    <div class="filter-box">
+
+        <h3>
+            <i class="fa-solid fa-filter"></i>
+            Filters
+        </h3>
+
+        <div class="filters">
+
+            <select id="statusFilter">
+                <option value="all">All Status</option>
+                <option value="completed">Completed</option>
+                <option value="pending">Pending</option>
+            </select>
+
+            <select id="priorityFilter">
+                <option value="all">All Priorities</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="Work">Work</option>
+                <option value="Study">Study</option>
+                <option value="Personal">Personal</option>
+                <option value="Health">Health</option>
+            </select>
+
+        </div>
+
+    </div>
+
+    <!-- Search -->
+    <div class="search-box">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search tasks...">
+    </div>
+
+    <!-- Task List -->
+    <div id="taskContainer">
+
+    </div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal" id="taskModal">
+
+    <div class="modal-content">
+
+        <h2>Add New Task</h2>
+
+        <input
+            type="text"
+            id="taskTitle"
+            placeholder="Task title">
+
+        <select id="taskPriority">
+            <option>High</option>
+            <option>Medium</option>
+            <option>Low</option>
+        </select>
+
+        <select id="taskCategory">
+            <option>Work</option>
+            <option>Study</option>
+            <option>Personal</option>
+            <option>Health</option>
+        </select>
+
+        <div class="modal-buttons">
+
+            <button class="save-btn"
+            onclick="addTask()">
+                Save Task
+            </button>
+
+            <button class="cancel-btn"
+            onclick="closeTaskModal()">
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
